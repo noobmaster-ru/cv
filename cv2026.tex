@@ -1,0 +1,84 @@
+\documentclass[11pt,a4paper,sans]{moderncv}
+
+% Установка шрифтов
+\usepackage[russian]{babel}
+\usepackage{tabularx}
+
+% Выбор стиля
+\moderncvstyle{banking} % Стиль (banking, classic, casual, etc.)
+\moderncvcolor{blue}    % Цвет темы (blue, orange, green, red, purple, etc.)
+
+% Установки страницы
+\usepackage[scale=0.75]{geometry}
+
+% Личные данные
+\name{Kirill}{Kozlov} 
+\address{Moscow,Russia}
+\phone[mobile]{+7 (910) 968 1153}
+\email{kirillandreevickozlov@yandex.ru}
+\social[github]{noobmaster-ru}
+\social[telegram]{@noobmaster\_rus}
+
+
+% Начало документа
+\begin{document}
+
+% Заголовок
+\makecvtitle
+
+% Раздел "Образование"
+% \section{Education}
+% \cventry{Aug 2022 - Present}{Faculty of Computional Mathematics and Cybernetics}{Moscow State University}{Moscow}{}{
+% }
+
+\section{Education}
+\cventry{Aug 2022 -- Present}{Faculty of Computational Mathematics and Cybernetics}{Moscow State University}{Moscow}{}{
+\normalsize \textit{Thesis:} Numerical Analysis of a Real Business Cycle Model for a Closed Economy
+}
+
+% Раздел "Курсы"
+% \section{Relevant Coursework}
+% \cvitem{}{{\bfseries Deep Learning School (DLS)} --- MIPT School of Deep Learning}
+\section{Relevant Coursework}
+\cvitem{}{\textbullet\ \textbf{Deep Learning School (DLS)} --- MIPT School of Deep Learning}
+
+% Раздел "Проекты"
+\section{Projects}
+\cventry{Jul 2024 -- Dec 2024}{Developer}{Placa}{Moscow}{}{
+\begin{itemize}
+    \item Built a Google Sheets analytics service for Wildberries sellers using Google Apps Script and Wildberries API integration.
+    \item Implemented a self-service Google Sheets template: copy → paste token → click control-panel buttons → daily automatic data loading.
+    \item The solution enables ~300 sellers to receive up-to-date advertising spend data on a daily basis.
+\end{itemize}
+}
+
+\cventry{Jul 2025 -- Sep 2025}{Python Developer}{WB Parser / Telegram Mini App}{Moscow}{}{
+\vspace{2pt}
+\begin{itemize}
+    \item Developed a Wildberries search parser with filtering by organic search position.
+    \item Delivered the product as a Telegram Mini App with a database backend; reached 220 active users.
+\end{itemize}
+}
+
+\cventry{Oct 2025 -- Present}{Python Developer}{\href{https://github.com/noobmaster-ru/axiomai}{AxiomAI}}{Moscow}{}{
+\vspace{2pt}
+\begin{itemize}
+    \item Built and deployed a production Telegram bot with OpenAI API, Redis, and Docker.
+    \item Telegram chatbot for a business account that handles conversations with all users who message the account.
+    \item Improved response speed and reduced manual manager workload in business communications.
+\end{itemize}
+}
+
+\section{Skills, Activities , Interests}
+\noindent
+\begin{tabularx}{\textwidth}{@{}l X@{}}
+\textbf{Languages:}  Russian -- Native, English -- Upper-Intermediate \\
+\textbf{Programming Languages:}  Python, Go, C++ \\
+\textbf{Frameworks:}  FastAPI, aiogram, aiohttp, pytest, pytorch \\
+\textbf{Developer Tools:} Git, Linux, Docker, CI/CD, Google Cloud Platform, VS Code, PostgreSQL, Redis\\
+\textbf{Libraries:}  asyncio, requests, pandas, numpy, sklearn  \\
+\textbf{Interests:}  Volleyball, Gym, Economy, History \\
+\end{tabularx}
+
+% Конец документа
+\end{document}

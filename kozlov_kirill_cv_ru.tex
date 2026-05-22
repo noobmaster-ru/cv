@@ -1,0 +1,94 @@
+\documentclass[11pt,a4paper,sans]{moderncv}
+
+% Язык и пакеты
+\usepackage[russian]{babel}
+\usepackage{tabularx}
+
+% Стиль
+\moderncvstyle{banking}
+\moderncvcolor{blue}
+
+% Настройки страницы
+\usepackage[scale=0.82]{geometry}
+
+% Личные данные
+\name{Кирилл}{Козлов}
+\address{Москва, Россия}
+\phone[mobile]{+7 (910) 968 1153}
+\email{kirillandreevickozlov@yandex.ru}
+\social[github]{noobmaster-ru}
+\social[telegram]{@noobmaster\_rus}
+
+\begin{document}
+
+\makecvtitle
+
+\section{Образование}
+\cventry{Авг 2022 -- настоящее время}
+{Факультет ВМК (вычислительной математики и кибернетики)}
+{Московский государственный университет}
+{Москва}{}{
+\vspace{2pt}
+\normalsize \textit{Тема дипломной работы:} Численный анализ модели реального делового цикла для закрытой экономики
+}
+
+\section{Дополнительное курсы}
+\cvitem{}{\textbullet\ \textbf{Deep Learning School (DLS), Computer Vision, NLP} --- Школа глубокого обучения МФТИ}
+
+\section{Опыт работы}
+\cventry{Апр 2026 -- настоящее время}
+{ML Engineer}
+{X5 Tech}
+{Москва}{}{
+\begin{itemize}
+    \item Разрабатываю RAG-систему для анализа юридических документов, чтобы помочь X5 Tech сэкономить до 19 млрд рублей в год. 
+\end{itemize}
+}
+
+\section{Проекты}
+\cventry{Июл 2024 -- Дек 2024}
+{Python-Разработчик}
+{Placa}
+{Москва}{}{
+\begin{itemize}
+    \item Разработал сервис аналитики в Google Sheets для продавцов Wildberries с использованием Google Apps Script и интеграции с Wildberries API.
+    \item Пайплан: копирование таблицы -> вставка токена WB API -> запуск кнопок на панели управления -> ежедневная автоматическая загрузка данных.
+    \item Решение позволило примерно 300 продавцам ежедневно получать актуальные данные о рекламных расходах на Wildberries.
+\end{itemize}
+}
+
+\cventry{Июл 2025 -- Сен 2025}
+{Python-разработчик}
+{WB Parser / Telegram Mini App}
+{Москва}{}{
+\vspace{3pt}
+\begin{itemize}
+    \item Разработал парсер поисковой выдачи Wildberries с фильтрацией по органической позиции товара.
+    \item Упаковал продукт в Telegram Mini App с backend и базой данных; достиг 220 активных пользователей.
+\end{itemize}
+}
+
+\cventry{Окт 2025 -- настоящее время}
+{Python-разработчик}
+{\href{https://github.com/noobmaster-ru/axiomai}{AxiomAI}}
+{Москва}{}{
+\vspace{3pt}
+\begin{itemize}
+    \item Разработал и развернул aiogram-бота с использованием OpenAI API, PostgreSQL, Redis и Docker.
+    \item Повысил скорость ответов и снизил нагрузку на менеджеров на 80\% в бизнес-коммуникациях.
+\end{itemize}
+}
+
+
+\section{Навыки, активность и интересы}
+\noindent
+\begin{tabularx}{\textwidth}{@{}l X@{}}
+\textbf{Языки:} Русский --- родной, Английский --- Upper-Intermediate(B2) \\
+\textbf{Языки программирования:} Python, Go, C++ \\
+\textbf{Фреймворки:} FastAPI, aiogram, aiohttp, pytest, pytorch \\
+\textbf{Инструменты разработки:} Git, Linux, Docker, gihub actions, VS Code, PostgreSQL, Redis \\
+\textbf{Библиотеки:} asyncio, requests, pandas, numpy, sklearn \\
+\textbf{Интересы:} Волейбол, тренажёрный зал, экономика, история \\
+\end{tabularx}
+
+\end{document}
