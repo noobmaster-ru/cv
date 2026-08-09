@@ -10,7 +10,7 @@
 \colorlet{firstnamecolor}{lastnamecolor}
 
 % Настройки страницы
-\usepackage[scale=0.82]{geometry}
+\usepackage[scale=0.84]{geometry}
 
 % Личные данные
 \name{Кирилл}{Козлов}
@@ -25,21 +25,24 @@
 \makecvtitle
 
 \section{Образование}
-\cventry{Авг 2022 -- настоящее время}
+\cventry{Авг 2022 -- Авг 2026}
 {Факультет ВМК (Вычислительной Математики и Кибернетики)}
 {МГУ имени М.В.Ломоносова}
 {Москва}{}{}
 
-\section{Дополнительное курсы}
-\cvitem{}{\textbullet\ \textbf{Deep Learning School (DLS), Computer Vision, NLP} --- Школа глубокого обучения МФТИ}
+\section{Дополнительное образование}
+\cvitem{}{\textbullet\ \textbf{Deep Learning School (DLS), Computer Vision and NLP part} --- Школа глубокого обучения МФТИ}
+\cvitem{}{\textbullet\ \textbf{Летняя школа по A/B тестированию от X5 Tech}}
 
 \section{Опыт работы}
 \cventry{Апр 2026 -- настоящее время}
-{ML Engineer}
+{Python-Разработчик}
 {X5 Tech}
 {Москва}{}{
 \begin{itemize}
-    \item Разрабатываю RAG-систему для анализа юридических документов, чтобы помочь X5 Tech сэкономить до 19 млрд рублей в год. 
+    \item Разработал LLM-агента для анализа юридических документов, который сэкономил X5 Group 8 FTE, развернул в k8s кластере в dev и prod окружениях. 
+    \item Помог команде ML-инженеров в разработке сервиса распознавания коммунальных платежей (OCR) для помещений X5 Group, писал бекенд-часть приложения на FastAPI, эффект - 10 FTE. 
+    \item Автоматизую процессы БЕ X5 Import по анализу иностранных инвойсов/счетов через OCR и LLM 
 \end{itemize}
 }
 
@@ -81,12 +84,12 @@
 \section{Навыки, активность и интересы}
 \noindent
 \begin{tabularx}{\textwidth}{@{}l X@{}}
-\textbf{Языки:} Русский --- родной, Английский --- Upper-Intermediate(B2) \\
-\textbf{Языки программирования:} Python, Go, C++ \\
-\textbf{Фреймворки:} FastAPI, aiogram, aiohttp, pytest, pytorch \\
-\textbf{Инструменты разработки:} Git, Linux, Docker, gihub actions, VS Code, PostgreSQL, Redis \\
-\textbf{Библиотеки:} asyncio, requests, pandas, numpy, sklearn \\
-\textbf{Интересы:} Волейбол, тренажёрный зал, экономика, история \\
+\textbf{Языки:} Русский --- родной, Английский --- Intermediate(B1) \\
+\textbf{Языки программирования:} Python\\
+\textbf{Фреймворки:} LangChain, FastAPI, SQLAlchemy (async), Alembic, Pydantic, pytest \\
+\textbf{Инструменты разработки:} Docker, Kubernetes (Helm), GitLab CI/CD, Kafka, PostgreSQL (pgvector), Redis, Nginx \\
+\textbf{Библиотеки:} asyncio, httpx, aiohttp, pandas, numpy, sklearn, structlog \\
+\textbf{Интересы:} Волейбол, ИИ, тренажёрный зал, экономика, история \\
 \end{tabularx}
 
 \end{document}
