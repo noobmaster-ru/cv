@@ -1,95 +1,94 @@
-\documentclass[11pt,a4paper,sans]{moderncv}
+% ATS-friendly resume: single column, no tables, no icons, no graphics,
+% standard section headings, plain-text contacts, selectable text.
+\documentclass[10pt,a4paper]{article}
 
-% Язык и пакеты
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
 \usepackage[russian]{babel}
-\usepackage{tabularx}
+\usepackage[left=1.5cm,right=1.5cm,top=1.3cm,bottom=1.3cm]{geometry}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
 
-% Стиль
-\moderncvcolor{blue}
-\moderncvstyle{banking}
-\colorlet{firstnamecolor}{lastnamecolor}
+\pagestyle{empty}
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\raggedright
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
 
-% Настройки страницы
-\usepackage[scale=0.84]{geometry}
+\newcommand{\cvsection}[1]{%
+  \vspace{7pt}{\large\bfseries #1}\par\vspace{2pt}\hrule\vspace{4pt}}
 
-% Личные данные
-\name{Кирилл}{Козлов}
-\address{Москва, Россия}
-\phone[mobile]{+7 (910) 968 1153}
-\email{kirillandreevickozlov@yandex.ru}
-\social[github]{noobmaster-ru}
-\social[telegram]{@noobmaster\_rus}
+% #1 -- должность, #2 -- даты, #3 -- организация и город
+\newcommand{\cventry}[3]{%
+  \textbf{#1} \textbar{} #3 \textbar{} #2\par\vspace{2pt}}
+
+\newlist{cvitems}{itemize}{1}
+\setlist[cvitems]{label=\textbullet, leftmargin=1.2em, topsep=2pt, itemsep=1pt, parsep=0pt}
 
 \begin{document}
 
-\makecvtitle
+{\LARGE\bfseries Кирилл Козлов}\par\vspace{3pt}
+ML-разработчик / Python-разработчик\par\vspace{3pt}
+Москва, Россия | Телефон: +7 (910) 968 1153 | Email: kirillandreevickozlov@yandex.ru\par
+GitHub: github.com/noobmaster-ru | Telegram: @noobmaster\_rus
 
-\section{Образование}
-\cventry{Авг 2022 -- Авг 2026}
-{Факультет ВМК (Вычислительной Математики и Кибернетики)}
-{МГУ имени М.В.Ломоносова}
-{Москва}{}{}
+\cvsection{Профиль}
+Python- и ML-разработчик, выпускник ВМК МГУ. Разрабатываю LLM-агентов и RAG-системы
+(Retrieval-Augmented Generation) в X5 Tech: бэкенд на FastAPI, интеграция больших языковых
+моделей (LLM) и распознавания документов (OCR), развёртывание в Kubernetes через GitLab CI/CD.
+Экономический эффект внедрённых решений --- 8 и 10 FTE.
 
-\section{Дополнительное образование}
-\cvitem{}{\textbullet\ \textbf{Deep Learning School (DLS), Computer Vision and NLP part} --- Школа глубокого обучения МФТИ}
-\cvitem{}{\textbullet\ \textbf{Летняя школа по A/B тестированию от X5 Tech}}
+\cvsection{Ключевые навыки}
+\textbf{Языки программирования:} Python\par
+\textbf{Искусственный интеллект и ML:} большие языковые модели (LLM), LLM-агенты,
+RAG (Retrieval-Augmented Generation), OpenAI API, LangChain, промпт-инжиниринг,
+распознавание документов (OCR), Claude Code\par
+\textbf{Фреймворки:} FastAPI, SQLAlchemy (async), Alembic, Pydantic, pytest\par
+\textbf{Библиотеки:} asyncio, httpx, aiohttp, pandas, NumPy, scikit-learn, structlog\par
+\textbf{Базы данных:} PostgreSQL, Redis\par
+\textbf{Инфраструктура и DevOps:} Docker, Kubernetes, Helm, GitLab CI/CD, Apache Kafka, Git, Linux\par
+\textbf{Языки:} русский --- родной, английский --- Intermediate (B1)
 
-\section{Опыт работы}
-\cventry{Апр 2026 -- настоящее время}
-{ML-Разработчик}
-{X5 Tech, департамент ИИ-агентов}
-{Москва}{}{
-\begin{itemize}
-    \item Разработал LLM-агента для анализа юридических документов, который сэкономил X5 Group 8 FTE, развернул в k8s кластере в dev и prod окружениях. 
-    \item Помог команде ML-инженеров в разработке сервиса распознавания коммунальных платежей (OCR) для помещений X5 Group, писал бекенд-часть приложения на FastAPI, эффект - 10 FTE. 
-    \item Автоматизую процессы БЕ X5 Import по анализу иностранных инвойсов/счетов через OCR и LLM 
-\end{itemize}
-}
+\cvsection{Опыт работы}
+\cventry{ML-разработчик}{Апрель 2026 --- настоящее время}{X5 Tech, департамент ИИ-агентов, Москва}
+\begin{cvitems}
+    \item Разработал LLM-агента для анализа юридических документов; экономический эффект для X5 Group --- 8 FTE.
+    \item Развернул сервис в кластере Kubernetes в средах dev и prod с использованием Helm и GitLab CI/CD.
+    \item Разработал бэкенд на FastAPI для сервиса распознавания коммунальных платежей (OCR) по помещениям X5 Group в составе команды ML-инженеров; экономический эффект --- 10 FTE.
+    \item Автоматизирую анализ иностранных инвойсов и счетов бизнес-единицы X5 Import с помощью OCR и больших языковых моделей.
+\end{cvitems}
 
-\section{Проекты}
-\cventry{Июл 2024 -- Дек 2024}
-{Python-Разработчик}
-{Placa}
-{Москва}{}{
-\begin{itemize}
-    \item Разработал сервис аналитики в Google Sheets для продавцов Wildberries с использованием Google Apps Script и интеграции с Wildberries API.
-    \item Пайплан: копирование таблицы -> вставка токена WB API -> запуск кнопок на панели управления -> ежедневная автоматическая загрузка данных.
-    \item Решение позволило примерно 300 продавцам ежедневно получать актуальные данные о рекламных расходах на Wildberries.
-\end{itemize}
-}
+\cvsection{Проекты}
+\cventry{Python-разработчик, AxiomAI}{Октябрь 2025 --- Апрель 2026}{github.com/noobmaster-ru/axiomai, Москва}
+\begin{cvitems}
+    \item Разработал и развернул Telegram-бота на aiogram с использованием OpenAI API, PostgreSQL, Redis и Docker.
+    \item Снизил нагрузку на менеджеров на 80\% и повысил скорость ответов в бизнес-коммуникациях.
+\end{cvitems}
+\vspace{4pt}
 
-\cventry{Июл 2025 -- Сен 2025}
-{Python-разработчик}
-{WB Parser / Telegram Mini App}
-{Москва}{}{
-\vspace{3pt}
-\begin{itemize}
+\cventry{Python-разработчик, WB Parser (Telegram Mini App)}{Июль 2025 --- Сентябрь 2025}{Москва}
+\begin{cvitems}
     \item Разработал парсер поисковой выдачи Wildberries с фильтрацией по органической позиции товара.
-    \item Упаковал продукт в Telegram Mini App с backend и базой данных; достиг 220 активных пользователей.
-\end{itemize}
-}
+    \item Упаковал продукт в Telegram Mini App с бэкендом и базой данных; привлёк 220 активных пользователей.
+\end{cvitems}
+\vspace{4pt}
 
-\cventry{Окт 2025 -- Апр 2026}
-{Python-разработчик}
-{\href{https://github.com/noobmaster-ru/axiomai}{AxiomAI}}
-{Москва}{}{
-\vspace{3pt}
-\begin{itemize}
-    \item Разработал и развернул aiogram-бота с использованием OpenAI API, PostgreSQL, Redis и Docker.
-    \item Повысил скорость ответов и снизил нагрузку на менеджеров на 80\% в бизнес-коммуникациях.
-\end{itemize}
-}
+\cventry{Python-разработчик, Placa}{Июль 2024 --- Декабрь 2024}{Москва}
+\begin{cvitems}
+    \item Разработал сервис аналитики в Google Sheets для продавцов Wildberries на Google Apps Script с интеграцией Wildberries API.
+    \item Автоматизировал ежедневную загрузку данных: копирование шаблона таблицы, ввод API-токена, запуск с панели управления.
+    \item Обеспечил около 300 продавцов ежедневными данными о рекламных расходах.
+\end{cvitems}
 
+\cvsection{Образование}
+\cventry{МГУ имени М.В. Ломоносова}{Август 2022 --- Август 2026}{Факультет вычислительной математики и кибернетики (ВМК), Москва}
+\begin{cvitems}
+    \item Deep Learning School (DLS), направления Computer Vision и NLP --- Школа глубокого обучения МФТИ.
+    \item Летняя школа по A/B-тестированию, X5 Tech.
+\end{cvitems}
 
-\section{Навыки, активность и интересы}
-\noindent
-\begin{tabularx}{\textwidth}{@{}l X@{}}
-\textbf{Языки:} Русский --- родной, Английский --- Intermediate(B1) \\
-\textbf{Языки программирования:} Python\\
-\textbf{Фреймворки:} LangChain, FastAPI, SQLAlchemy (async), Alembic, Pydantic, pytest \\
-\textbf{Инструменты разработки:} Docker, Kubernetes (Helm), GitLab CI/CD, Kafka, PostgreSQL, Redis, Claude Code \\
-\textbf{Библиотеки:} asyncio, httpx, aiohttp, pandas, numpy, sklearn, structlog \\
-\textbf{Интересы:} Волейбол, ИИ, тренажёрный зал, экономика, история \\
-\end{tabularx}
+\cvsection{Интересы}
+Волейбол, искусственный интеллект, тренажёрный зал, экономика, история.
 
 \end{document}

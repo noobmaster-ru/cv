@@ -1,94 +1,95 @@
-\documentclass[11pt,a4paper,sans]{moderncv}
+% ATS-friendly resume: single column, no tables, no icons, no graphics,
+% standard section headings, plain-text contacts, selectable text.
+\documentclass[10pt,a4paper]{article}
 
-% Установка шрифтов
-\usepackage[russian]{babel}
-\usepackage{tabularx}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[left=1.5cm,right=1.5cm,top=1.3cm,bottom=1.3cm]{geometry}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
 
-% Выбор стиля
-\moderncvcolor{blue}    % Цвет темы (blue, orange, green, red, purple, etc.)
-\moderncvstyle{banking} % Стиль (banking, classic, casual, etc.)
-\colorlet{firstnamecolor}{lastnamecolor}
+\pagestyle{empty}
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\raggedright
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
 
-% Установки страницы
-\usepackage[scale=0.84]{geometry}
+\newcommand{\cvsection}[1]{%
+  \vspace{7pt}{\large\bfseries #1}\par\vspace{2pt}\hrule\vspace{4pt}}
 
-% Личные данные
-\name{Kirill}{Kozlov} 
-\address{Moscow,Russia}
-\phone[mobile]{+7 (910) 968 1153}
-\email{kirillkozlov.yar@gmail.com}
-\social[github]{noobmaster-ru}
-\social[telegram]{@noobmaster\_rus}
+% #1 -- job title, #2 -- dates, #3 -- organization and location
+\newcommand{\cventry}[3]{%
+  \textbf{#1} \textbar{} #3 \textbar{} #2\par\vspace{2pt}}
 
+\newlist{cvitems}{itemize}{1}
+\setlist[cvitems]{label=\textbullet, leftmargin=1.2em, topsep=2pt, itemsep=1pt, parsep=0pt}
 
-% Начало документа
 \begin{document}
-\nopagenumbers{}
 
-% Заголовок
-\makecvtitle
+{\LARGE\bfseries Kirill Kozlov}\par\vspace{3pt}
+Machine Learning Developer / Python Developer\par\vspace{3pt}
+Moscow, Russia | Phone: +7 (910) 968 1153 | Email: kirillkozlov.yar@gmail.com\par
+GitHub: github.com/noobmaster-ru | Telegram: @noobmaster\_rus
 
-% Раздел "Образование"
-% \section{Education}
-% \cventry{Aug 2022 - Present}{Faculty of Computional Mathematics and Cybernetics}{Moscow State University}{Moscow}{}{
-% }
+\cvsection{Professional Summary}
+Python and Machine Learning developer, graduate of the Faculty of Computational Mathematics
+and Cybernetics at Lomonosov Moscow State University. Build production LLM (Large Language Model)
+agents and RAG (Retrieval-Augmented Generation) systems at X5 Tech: FastAPI backends,
+LLM and OCR (Optical Character Recognition) integration, deployment to Kubernetes via GitLab CI/CD.
+Delivered solutions with a measured business impact of 8 and 10 FTE.
 
-\section{Education}
-\cventry{Aug 2022 -- Aug 2026}{Faculty of Computational Mathematics and Cybernetics}{Lomonosov Moscow State University}{Moscow}{}{}
+\cvsection{Technical Skills}
+\textbf{Programming Languages:} Python, Go, C++\par
+\textbf{Artificial Intelligence and Machine Learning:} Large Language Models (LLM), LLM agents,
+RAG (Retrieval-Augmented Generation), OpenAI API, LangChain, prompt engineering,
+OCR (Optical Character Recognition), PyTorch, Claude Code\par
+\textbf{Frameworks:} FastAPI, SQLAlchemy (async), Alembic, Pydantic, aiogram, pytest\par
+\textbf{Libraries:} asyncio, httpx, aiohttp, requests, pandas, NumPy, scikit-learn, structlog\par
+\textbf{Databases:} PostgreSQL, Redis\par
+\textbf{Infrastructure and DevOps:} Docker, Kubernetes, Helm, GitLab CI/CD, Apache Kafka, Nginx, Git, Linux\par
+\textbf{Languages:} Russian --- Native, English --- Intermediate (B1)
 
-% Раздел "Курсы"
-% \section{Relevant Coursework}
-% \cvitem{}{{\bfseries Deep Learning School (DLS)} --- MIPT School of Deep Learning}
-\section{Relevant Coursework}
-\cvitem{}{\textbullet\ \textbf{Deep Learning School (DLS), Computer Vision and NLP part} --- MIPT School of Deep Learning}
-\cvitem{}{\textbullet\ \textbf{Summer School on A/B Testing by X5 Tech}}
+\cvsection{Work Experience}
+\cventry{Machine Learning Developer}{April 2026 --- Present}{X5 Tech (X5 Group, Russia's largest grocery retailer), AI Agents Department, Moscow}
+\begin{cvitems}
+    \item Built an LLM agent for legal document analysis; delivered a business impact of 8 FTE for X5 Group.
+    \item Deployed the service to a Kubernetes cluster in dev and prod environments using Helm and GitLab CI/CD.
+    \item Developed the FastAPI backend for an OCR service recognizing utility bills across X5 Group premises, working with a team of ML engineers; business impact of 10 FTE.
+    \item Automating analysis of foreign invoices and bills for the X5 Import business unit using OCR and Large Language Models.
+\end{cvitems}
 
-% Раздел "Опыт работы"
-\section{Work Experience}
-\cventry{Apr 2026 -- Present}{Python Developer}{X5 Tech (Russia's largest grocery retailer)}{Moscow}{}{
-\begin{itemize}
-    \item Built an LLM agent for legal document analysis that saved X5 Group 8 FTE; deployed it to a Kubernetes cluster in dev and prod environments.
-    \item Supported a team of ML engineers building an OCR service for utility-bill recognition across X5 Group premises; developed the FastAPI backend, with an impact of 10 FTE.
-    \item Automating foreign invoice and bill analysis for the X5 Import business unit using OCR and LLMs.
-\end{itemize}
-}
+\cvsection{Projects}
+\cventry{Python Developer, AxiomAI}{October 2025 --- April 2026}{github.com/noobmaster-ru/axiomai, Moscow}
+\begin{cvitems}
+    \item Built and deployed an aiogram Telegram bot using the OpenAI API, PostgreSQL, Redis, and Docker.
+    \item Reduced manager workload by 80\% and improved response speed in business communications.
+\end{cvitems}
+\vspace{4pt}
 
-% Раздел "Проекты"
-\section{Projects}
-\cventry{Jul 2024 -- Dec 2024}{Python Developer}{Placa}{Moscow}{}{
-\begin{itemize}
-    \item Built a Google Sheets analytics service for Wildberries sellers using Google Apps Script and Wildberries API integration.
-    \item Implemented a self-service Google Sheets template: copy → paste token → click control-panel buttons → daily automatic data loading.
-    \item The solution enables ~300 sellers to receive up-to-date advertising spend data on a daily basis.
-\end{itemize}
-}
+\cventry{Python Developer, WB Parser (Telegram Mini App)}{July 2025 --- September 2025}{Moscow}
+\begin{cvitems}
+    \item Developed a Wildberries search-results parser with filtering by organic product position.
+    \item Delivered the product as a Telegram Mini App with a backend and database; reached 220 active users.
+\end{cvitems}
+\vspace{4pt}
 
-\cventry{Jul 2025 -- Sep 2025}{Python Developer}{WB Parser / Telegram Mini App}{Moscow}{}{
-\vspace{2pt}
-\begin{itemize}
-    \item Developed a Wildberries search parser with filtering by organic search position.
-    \item Delivered the product as a Telegram Mini App with a database backend; reached 220 active users.
-\end{itemize}
-}
+\cventry{Python Developer, Placa}{July 2024 --- December 2024}{Moscow}
+\begin{cvitems}
+    \item Built a Google Sheets analytics service for Wildberries sellers using Google Apps Script and the Wildberries API.
+    \item Automated daily data loading: copy the spreadsheet template, enter an API token, run jobs from a control panel.
+    \item Enabled approximately 300 sellers to receive daily advertising spend data.
+\end{cvitems}
 
-\cventry{Oct 2025 -- Apr 2026}{Python Developer}{\href{https://github.com/noobmaster-ru/axiomai}{AxiomAI}}{Moscow}{}{
-\vspace{2pt}
-\begin{itemize}
-    \item Built and deployed an aiogram bot using the OpenAI API, PostgreSQL, Redis, and Docker.
-    \item Improved response speed and reduced manager workload by 80\% in business communications.
-\end{itemize}
-}
+\cvsection{Education}
+\cventry{Lomonosov Moscow State University}{August 2022 --- August 2026}{Faculty of Computational Mathematics and Cybernetics, Moscow}
+\begin{cvitems}
+    \item Deep Learning School (DLS), Computer Vision and NLP tracks --- MIPT School of Deep Learning.
+    \item Summer School on A/B Testing, X5 Tech.
+\end{cvitems}
 
-\section{Skills, Activities , Interests}
-\noindent
-\begin{tabularx}{\textwidth}{@{}l X@{}}
-\textbf{Languages:}  Russian -- Native, English -- Upper-Intermediate (B2) \\
-\textbf{Programming Languages:}  Python, Go, C++ \\
-\textbf{Frameworks:}  LangChain, FastAPI, SQLAlchemy (async), Alembic, Pydantic, aiogram, pytest, pytorch \\
-\textbf{Developer Tools:} Git, Linux, Docker, Kubernetes (Helm), GitLab CI/CD, Kafka, PostgreSQL (pgvector), Redis, Nginx, Claude Code\\
-\textbf{Libraries:}  asyncio, httpx, aiohttp, requests, pandas, numpy, sklearn, structlog  \\
-\textbf{Interests:}  Volleyball, Gym, Economy, History \\
-\end{tabularx}
+\cvsection{Interests}
+Volleyball, artificial intelligence, gym, economics, history.
 
-% Конец документа
 \end{document}
