@@ -1,5 +1,10 @@
-% ATS-friendly resume: single column, no tables, no icons, no graphics,
-% standard section headings, plain-text contacts, selectable text.
+% ATS-friendly resume: одна колонка, без таблиц, иконок и графики,
+% стандартные заголовки разделов, контакты текстом, выделяемый текст.
+%
+% Два варианта из одного источника:
+%   pdflatex -jobname=cv_ru_ml      "\def\target{ml}\input{cv_ru.tex}"
+%   pdflatex -jobname=cv_ru_backend "\def\target{backend}\input{cv_ru.tex}"
+% Проще: make (см. Makefile).
 \documentclass[10pt,a4paper]{article}
 
 \usepackage[T2A]{fontenc}
@@ -7,7 +12,13 @@
 \usepackage[russian]{babel}
 \usepackage[left=1.5cm,right=1.5cm,top=1.3cm,bottom=1.3cm]{geometry}
 \usepackage{enumitem}
+\usepackage{etoolbox}
 \usepackage[hidelinks]{hyperref}
+
+% Вариант резюме: ml (по умолчанию) или backend
+\providecommand{\target}{ml}
+% \ifml{текст для ML-варианта}{текст для backend-варианта}
+\newcommand{\ifml}[2]{\ifdefstring{\target}{ml}{#1}{#2}}
 
 \pagestyle{empty}
 \hyphenpenalty=10000
@@ -26,37 +37,60 @@
 \newlist{cvitems}{itemize}{1}
 \setlist[cvitems]{label=\textbullet, leftmargin=1.2em, topsep=2pt, itemsep=1pt, parsep=0pt}
 
+% --- Блоки навыков (порядок зависит от варианта) ---
+\newcommand{\skilllangs}{\textbf{Языки программирования:} Python, SQL\par}
+\newcommand{\skillai}{\textbf{Искусственный интеллект и ML:} большие языковые модели (LLM), LLM-агенты,
+RAG (Retrieval-Augmented Generation), OpenAI API, LangChain, промпт-инжиниринг,
+распознавание документов (OCR), Claude Code\par}
+\newcommand{\skillframeworks}{\textbf{Фреймворки:} FastAPI, SQLAlchemy (async), Alembic, Pydantic, pytest\par}
+\newcommand{\skilllibs}{\textbf{Библиотеки:} asyncio, httpx, aiohttp, pandas, NumPy, scikit-learn, structlog\par}
+\newcommand{\skilldb}{\textbf{Базы данных:} PostgreSQL, Redis\par}
+\newcommand{\skillinfra}{\textbf{Инфраструктура и DevOps:} Docker, Kubernetes (K8s), Helm, GitLab CI/CD,
+Apache Kafka, Git, Linux\par}
+\newcommand{\skillhuman}{\textbf{Языки:} русский --- родной, английский --- Intermediate (B1)}
+
 \begin{document}
 
 {\LARGE\bfseries Кирилл Козлов}\par\vspace{3pt}
-ML-разработчик / Python-разработчик\par\vspace{3pt}
+\ifml{ML-разработчик / LLM Engineer}{Python-разработчик (Backend)}\par\vspace{3pt}
 Москва, Россия | Телефон: +7 (910) 968 1153 | Email: kirillandreevickozlov@yandex.ru\par
 GitHub: github.com/noobmaster-ru | Telegram: @noobmaster\_rus
 
 \cvsection{Профиль}
+\ifml{%
 Python- и ML-разработчик, выпускник ВМК МГУ. Разрабатываю LLM-агентов и RAG-системы
-(Retrieval-Augmented Generation) в X5 Tech: бэкенд на FastAPI, интеграция больших языковых
-моделей (LLM) и распознавания документов (OCR), развёртывание в Kubernetes через GitLab CI/CD.
-Экономический эффект внедрённых решений --- 8 и 10 FTE.
+(Retrieval-Augmented Generation) в X5 Tech: проектирование агентов поверх больших языковых моделей (LLM),
+поиск по корпусу документов, распознавание документов (OCR), развёртывание моделей в продакшене.
+Экономический эффект внедрённых решений --- 8 и 10 FTE.%
+}{%
+Python-разработчик, выпускник ВМК МГУ. Разрабатываю бэкенд-сервисы на FastAPI в X5 Tech:
+асинхронный REST API, PostgreSQL и SQLAlchemy, тесты на pytest, развёртывание в Kubernetes
+через GitLab CI/CD. Интегрирую большие языковые модели (LLM) и распознавание документов (OCR).
+Экономический эффект внедрённых решений --- 8 и 10 FTE.%
+}
 
 \cvsection{Ключевые навыки}
-\textbf{Языки программирования:} Python\par
-\textbf{Искусственный интеллект и ML:} большие языковые модели (LLM), LLM-агенты,
-RAG (Retrieval-Augmented Generation), OpenAI API, LangChain, промпт-инжиниринг,
-распознавание документов (OCR), Claude Code\par
-\textbf{Фреймворки:} FastAPI, SQLAlchemy (async), Alembic, Pydantic, pytest\par
-\textbf{Библиотеки:} asyncio, httpx, aiohttp, pandas, NumPy, scikit-learn, structlog\par
-\textbf{Базы данных:} PostgreSQL, Redis\par
-\textbf{Инфраструктура и DevOps:} Docker, Kubernetes, Helm, GitLab CI/CD, Apache Kafka, Git, Linux\par
-\textbf{Языки:} русский --- родной, английский --- Intermediate (B1)
+\skilllangs
+\ifml{\skillai\skillframeworks\skilllibs\skilldb\skillinfra}%
+     {\skillframeworks\skilldb\skillinfra\skilllibs\skillai}
+\skillhuman
 
 \cvsection{Опыт работы}
-\cventry{ML-разработчик}{Апрель 2026 --- настоящее время}{X5 Tech, департамент ИИ-агентов, Москва}
+\cventry{\ifml{ML-разработчик}{Python-разработчик}}{Апрель 2026 --- настоящее время}{X5 Tech, департамент ИИ-агентов, Москва}
 \begin{cvitems}
+\ifml{%
     \item Разработал LLM-агента для анализа юридических документов; экономический эффект для X5 Group --- 8 FTE.
-    \item Развернул сервис в кластере Kubernetes в средах dev и prod с использованием Helm и GitLab CI/CD.
+    \item Построил пайплайн поиска по корпусу российского законодательства: разбиение документов на фрагменты, поисковый индекс, подстановка релевантного контекста в промпт (RAG).
     \item Разработал бэкенд на FastAPI для сервиса распознавания коммунальных платежей (OCR) по помещениям X5 Group в составе команды ML-инженеров; экономический эффект --- 10 FTE.
     \item Автоматизирую анализ иностранных инвойсов и счетов бизнес-единицы X5 Import с помощью OCR и больших языковых моделей.
+    \item Развернул решение в кластере Kubernetes в средах dev и prod через Helm и GitLab CI/CD.%
+}{%
+    \item Разработал бэкенд-сервис на FastAPI для анализа юридических документов на базе LLM-агента; экономический эффект для X5 Group --- 8 FTE.
+    \item Развернул сервис в кластере Kubernetes в средах dev и prod: Helm-чарт, автоматическая сборка и деплой в GitLab CI/CD.
+    \item Разработал бэкенд на FastAPI для сервиса распознавания коммунальных платежей (OCR) по помещениям X5 Group в составе команды ML-инженеров; экономический эффект --- 10 FTE.
+    \item Работаю с PostgreSQL через SQLAlchemy (async) и Alembic, покрываю код тестами на pytest.
+    \item Автоматизирую анализ иностранных инвойсов и счетов бизнес-единицы X5 Import с помощью OCR и больших языковых моделей.%
+}
 \end{cvitems}
 
 \cvsection{Проекты}

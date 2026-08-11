@@ -1,5 +1,10 @@
 % ATS-friendly resume: single column, no tables, no icons, no graphics,
 % standard section headings, plain-text contacts, selectable text.
+%
+% Two variants from one source:
+%   pdflatex -jobname=cv_eng_ml      "\def\target{ml}\input{cv_eng.tex}"
+%   pdflatex -jobname=cv_eng_backend "\def\target{backend}\input{cv_eng.tex}"
+% Or simply: make (see Makefile).
 \documentclass[10pt,a4paper]{article}
 
 \usepackage[T1]{fontenc}
@@ -7,7 +12,13 @@
 \usepackage[english]{babel}
 \usepackage[left=1.5cm,right=1.5cm,top=1.3cm,bottom=1.3cm]{geometry}
 \usepackage{enumitem}
+\usepackage{etoolbox}
 \usepackage[hidelinks]{hyperref}
+
+% Resume variant: ml (default) or backend
+\providecommand{\target}{ml}
+% \ifml{text for the ML variant}{text for the backend variant}
+\newcommand{\ifml}[2]{\ifdefstring{\target}{ml}{#1}{#2}}
 
 \pagestyle{empty}
 \hyphenpenalty=10000
@@ -26,38 +37,62 @@
 \newlist{cvitems}{itemize}{1}
 \setlist[cvitems]{label=\textbullet, leftmargin=1.2em, topsep=2pt, itemsep=1pt, parsep=0pt}
 
+% --- Skill blocks (order depends on the variant) ---
+\newcommand{\skilllangs}{\textbf{Programming Languages:} Python, SQL, Go, C++\par}
+\newcommand{\skillai}{\textbf{Artificial Intelligence and Machine Learning:} Large Language Models (LLM),
+LLM agents, RAG (Retrieval-Augmented Generation), OpenAI API, LangChain, prompt engineering,
+OCR (Optical Character Recognition), PyTorch, Claude Code\par}
+\newcommand{\skillframeworks}{\textbf{Frameworks:} FastAPI, SQLAlchemy (async), Alembic, Pydantic, aiogram, pytest\par}
+\newcommand{\skilllibs}{\textbf{Libraries:} asyncio, httpx, aiohttp, requests, pandas, NumPy, scikit-learn, structlog\par}
+\newcommand{\skilldb}{\textbf{Databases:} PostgreSQL, Redis\par}
+\newcommand{\skillinfra}{\textbf{Infrastructure and DevOps:} Docker, Kubernetes (K8s), Helm, GitLab CI/CD,
+Apache Kafka, Nginx, Git, Linux\par}
+\newcommand{\skillhuman}{\textbf{Languages:} Russian --- Native, English --- Intermediate (B1)}
+
 \begin{document}
 
 {\LARGE\bfseries Kirill Kozlov}\par\vspace{3pt}
-Machine Learning Developer / Python Developer\par\vspace{3pt}
+\ifml{Machine Learning Developer / LLM Engineer}{Python Backend Developer}\par\vspace{3pt}
 Moscow, Russia | Phone: +7 (910) 968 1153 | Email: kirillkozlov.yar@gmail.com\par
 GitHub: github.com/noobmaster-ru | Telegram: @noobmaster\_rus
 
 \cvsection{Professional Summary}
-Python and Machine Learning developer, graduate of the Faculty of Computational Mathematics
-and Cybernetics at Lomonosov Moscow State University. Build production LLM (Large Language Model)
-agents and RAG (Retrieval-Augmented Generation) systems at X5 Tech: FastAPI backends,
-LLM and OCR (Optical Character Recognition) integration, deployment to Kubernetes via GitLab CI/CD.
-Delivered solutions with a measured business impact of 8 and 10 FTE.
+\ifml{%
+Python and Machine Learning developer, graduate of the Faculty of Computational Mathematics and Cybernetics
+at Lomonosov Moscow State University. Build LLM (Large Language Model) agents and RAG
+(Retrieval-Augmented Generation) systems at X5 Tech: agent design on top of large language models,
+retrieval over document corpora, OCR (Optical Character Recognition), production deployment.
+Delivered solutions with a measured business impact of 8 and 10 FTE.%
+}{%
+Python backend developer, graduate of the Faculty of Computational Mathematics and Cybernetics
+at Lomonosov Moscow State University. Build backend services at X5 Tech: asynchronous REST APIs on FastAPI,
+PostgreSQL with SQLAlchemy, pytest coverage, deployment to Kubernetes via GitLab CI/CD.
+Integrate Large Language Models (LLM) and OCR (Optical Character Recognition).
+Delivered solutions with a measured business impact of 8 and 10 FTE.%
+}
 
 \cvsection{Technical Skills}
-\textbf{Programming Languages:} Python, Go, C++\par
-\textbf{Artificial Intelligence and Machine Learning:} Large Language Models (LLM), LLM agents,
-RAG (Retrieval-Augmented Generation), OpenAI API, LangChain, prompt engineering,
-OCR (Optical Character Recognition), PyTorch, Claude Code\par
-\textbf{Frameworks:} FastAPI, SQLAlchemy (async), Alembic, Pydantic, aiogram, pytest\par
-\textbf{Libraries:} asyncio, httpx, aiohttp, requests, pandas, NumPy, scikit-learn, structlog\par
-\textbf{Databases:} PostgreSQL, Redis\par
-\textbf{Infrastructure and DevOps:} Docker, Kubernetes, Helm, GitLab CI/CD, Apache Kafka, Nginx, Git, Linux\par
-\textbf{Languages:} Russian --- Native, English --- Intermediate (B1)
+\skilllangs
+\ifml{\skillai\skillframeworks\skilllibs\skilldb\skillinfra}%
+     {\skillframeworks\skilldb\skillinfra\skilllibs\skillai}
+\skillhuman
 
 \cvsection{Work Experience}
-\cventry{Machine Learning Developer}{April 2026 --- Present}{X5 Tech (X5 Group, Russia's largest grocery retailer), AI Agents Department, Moscow}
+\cventry{\ifml{Machine Learning Developer}{Python Backend Developer}}{April 2026 --- Present}{X5 Tech (X5 Group, Russia's largest grocery retailer), AI Agents Department, Moscow}
 \begin{cvitems}
+\ifml{%
     \item Built an LLM agent for legal document analysis; delivered a business impact of 8 FTE for X5 Group.
-    \item Deployed the service to a Kubernetes cluster in dev and prod environments using Helm and GitLab CI/CD.
+    \item Built a retrieval pipeline over the corpus of Russian legislation: document chunking, search index, injection of relevant context into the prompt (RAG).
     \item Developed the FastAPI backend for an OCR service recognizing utility bills across X5 Group premises, working with a team of ML engineers; business impact of 10 FTE.
     \item Automating analysis of foreign invoices and bills for the X5 Import business unit using OCR and Large Language Models.
+    \item Deployed the solution to a Kubernetes cluster in dev and prod environments via Helm and GitLab CI/CD.%
+}{%
+    \item Developed a FastAPI backend service for legal document analysis powered by an LLM agent; delivered a business impact of 8 FTE for X5 Group.
+    \item Deployed the service to a Kubernetes cluster in dev and prod environments: Helm chart, automated build and deploy in GitLab CI/CD.
+    \item Developed the FastAPI backend for an OCR service recognizing utility bills across X5 Group premises, working with a team of ML engineers; business impact of 10 FTE.
+    \item Work with PostgreSQL through SQLAlchemy (async) and Alembic; cover code with pytest tests.
+    \item Automating analysis of foreign invoices and bills for the X5 Import business unit using OCR and Large Language Models.%
+}
 \end{cvitems}
 
 \cvsection{Projects}
