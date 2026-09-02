@@ -40,33 +40,33 @@
 % --- Блоки навыков (порядок зависит от варианта) ---
 \newcommand{\skilllangs}{\textbf{Языки программирования:} Python, SQL\par}
 \newcommand{\skillai}{\textbf{Искусственный интеллект и ML:} большие языковые модели (LLM), LLM-агенты,
-RAG (Retrieval-Augmented Generation), OpenAI API, LangChain, промпт-инжиниринг,
+RAG (Retrieval-Augmented Generation), BM25, OpenAI API, LangChain, промпт-инжиниринг,
 распознавание документов (OCR), A/B-тестирование (A/B testing), Claude Code\par}
 \newcommand{\skillframeworks}{\textbf{Фреймворки:} FastAPI, SQLAlchemy (async), Alembic, Pydantic, pytest\par}
 \newcommand{\skilllibs}{\textbf{Библиотеки:} asyncio, httpx, aiohttp, pandas, NumPy, scikit-learn, structlog\par}
-\newcommand{\skilldb}{\textbf{Базы данных:} PostgreSQL, Redis\par}
-\newcommand{\skillinfra}{\textbf{Инфраструктура и DevOps:} Docker, Kubernetes (K8s), Helm, GitLab CI/CD,
-Apache Kafka, Git, Linux\par}
+\newcommand{\skilldb}{\textbf{Базы данных и очереди:} PostgreSQL, Redis, Apache Kafka\par}
+\newcommand{\skillinfra}{\textbf{Инфраструктура и DevOps:} Docker, Kubernetes (K8s), Helm, GitLab CI/CD, Git, Linux\par}
 \newcommand{\skillhuman}{\textbf{Языки:} русский --- родной, английский --- Intermediate (B1)}
 
 \begin{document}
 
 {\LARGE\bfseries Кирилл Козлов}\par\vspace{3pt}
-\ifml{ML-разработчик / LLM Engineer}{Python-разработчик (Backend)}\par\vspace{3pt}
+\ifml{Middle ML-разработчик (Python, LLM, RAG)}{Middle Python-разработчик (FastAPI, PostgreSQL, Kubernetes)}\par\vspace{3pt}
 Москва, Россия | Телефон: +7 (910) 968 1153 | Email: kirillandreevickozlov@yandex.ru\par
 GitHub: github.com/noobmaster-ru | Telegram: @noobmaster\_rus
 
-\cvsection{Профиль}
+\cvsection{О себе}
 \ifml{%
-Python- и ML-разработчик, выпускник бакалавриата ВМК МГУ, студент магистратуры ВМК МГУ. Разрабатываю LLM-агентов и RAG-системы
-(Retrieval-Augmented Generation) в X5 Tech: проектирование агентов поверх больших языковых моделей (LLM),
-поиск по корпусу документов, распознавание документов (OCR), развёртывание моделей в продакшене.
-Экономический эффект внедрённых решений --- 8 и 10 FTE.%
+ML-разработчик, бакалавр ВМК МГУ, учусь в магистратуре ВМК МГУ по машинному обучению (кафедра ММП).
+В X5 Tech разработал LLM-агента для проверки договоров: свыше 500 проверок на проде за четыре месяца,
+заключение за 8--19 минут вместо около 97 минут ручной работы юриста, экономический эффект 8 FTE.
+Ключевые навыки: Python, LLM и RAG (LangChain, BM25), FastAPI, PostgreSQL, Kubernetes.%
 }{%
-Python-разработчик, выпускник бакалавриата ВМК МГУ, студент магистратуры ВМК МГУ. Разрабатываю бэкенд-сервисы на FastAPI в X5 Tech:
-асинхронный REST API, PostgreSQL и SQLAlchemy, тесты на pytest, развёртывание в Kubernetes
-через GitLab CI/CD. Интегрирую большие языковые модели (LLM) и распознавание документов (OCR).
-Экономический эффект внедрённых решений --- 8 и 10 FTE.%
+Python-разработчик, бакалавр ВМК МГУ, учусь в магистратуре ВМК МГУ по машинному обучению.
+В X5 Tech разработал три бэкенд-сервиса на FastAPI и развернул их в Kubernetes: LLM-агент для проверки
+договоров (свыше 500 проверок на проде, эффект 8 FTE), обработка коммунальных платежей (эффект 10 FTE),
+анализ иностранных инвойсов. Ключевые навыки: Python, FastAPI, PostgreSQL (SQLAlchemy, Alembic),
+Apache Kafka, Docker и Kubernetes, GitLab CI/CD.%
 }
 
 \cvsection{Ключевые навыки}
@@ -79,36 +79,36 @@ Python-разработчик, выпускник бакалавриата ВМ�
 \cventry{\ifml{ML-разработчик}{Python-разработчик}}{Апрель 2026 --- настоящее время}{X5 Tech, департамент ИИ-агентов, Москва}
 \begin{cvitems}
 \ifml{%
-    \item Разработал LLM-агента для анализа юридических документов; экономический эффект для X5 Group --- 8 FTE.
-    \item Построил пайплайн поиска по корпусу российского законодательства: разбиение документов на фрагменты, поисковый индекс, подстановка релевантного контекста в промпт (RAG).
-    \item Разработал бэкенд на FastAPI для сервиса распознавания коммунальных платежей (OCR) по помещениям X5 Group в составе команды ML-инженеров; экономический эффект --- 10 FTE.
-    \item Автоматизирую анализ иностранных инвойсов и счетов бизнес-единицы X5 Import с помощью OCR и больших языковых моделей.
-    \item Развернул решение в кластере Kubernetes в средах dev и prod через Helm и GitLab CI/CD.%
+    \item Разработал LLM-агента на LangChain для проверки договоров: свыше 500 проверок на проде за май--август 2026, заключение за 8--19 минут вместо около 97 минут ручной работы юриста; экономический эффект для X5 Group --- 8 FTE.
+    \item Реализовал поиск по корпусу законодательства для RAG: 40 федеральных законов, 366 статей (в том числе ГК РФ), BM25-индекс, подстановка релевантных статей в промпт агента.
+    \item Разработал бэкенд на FastAPI для сервиса обработки коммунальных платежей: приём результатов OCR из Apache Kafka, хранение и выдача во фронтенд; экономический эффект --- 10 FTE.
+    \item Разработал и развернул на dev и prod сервис анализа иностранных инвойсов на OCR и LLM для бизнес-единицы X5 Import; с августа 2026 в пилотной эксплуатации.
+    \item Развернул сервисы в кластере Kubernetes (dev и prod) через Helm и GitLab CI/CD; латентность агентов отслеживается в Grafana.%
 }{%
-    \item Разработал бэкенд-сервис на FastAPI для анализа юридических документов на базе LLM-агента; экономический эффект для X5 Group --- 8 FTE.
-    \item Развернул сервис в кластере Kubernetes в средах dev и prod: Helm-чарт, автоматическая сборка и деплой в GitLab CI/CD.
-    \item Разработал бэкенд на FastAPI для сервиса распознавания коммунальных платежей (OCR) по помещениям X5 Group в составе команды ML-инженеров; экономический эффект --- 10 FTE.
-    \item Работаю с PostgreSQL через SQLAlchemy (async) и Alembic, покрываю код тестами на pytest.
-    \item Автоматизирую анализ иностранных инвойсов и счетов бизнес-единицы X5 Import с помощью OCR и больших языковых моделей.%
+    \item Разработал бэкенд-сервис на FastAPI и PostgreSQL (SQLAlchemy async, Alembic) для LLM-агента проверки договоров: свыше 500 проверок на проде за май--август 2026; экономический эффект для X5 Group --- 8 FTE.
+    \item Сократил время подготовки юридического заключения до 8--19 минут против около 97 минут ручной работы юриста.
+    \item Разработал бэкенд на FastAPI для сервиса обработки коммунальных платежей: приём результатов OCR из Apache Kafka, хранение и выдача во фронтенд; экономический эффект --- 10 FTE.
+    \item Разработал и развернул на dev и prod stateless REST API для анализа иностранных инвойсов (OCR и LLM) для бизнес-единицы X5 Import; с августа 2026 в пилотной эксплуатации.
+    \item Развернул сервисы в кластере Kubernetes (dev и prod): Helm-чарты, сборка и деплой образов в GitLab CI/CD, метрики латентности в Grafana.%
 }
 \end{cvitems}
 
 \cvsection{Проекты}
-\cventry{Python-разработчик, AxiomAI}{Октябрь 2025 --- Апрель 2026}{github.com/noobmaster-ru/axiomai, Москва}
+\cventry{Python-разработчик, AxiomAI}{Октябрь 2025 --- Апрель 2026}{github.com/noobmaster-ru/axiomai}
 \begin{cvitems}
     \item Разработал и развернул Telegram-бота на aiogram с использованием OpenAI API, PostgreSQL, Redis и Docker.
     \item Снизил нагрузку на менеджеров на 80\% и повысил скорость ответов в бизнес-коммуникациях.
 \end{cvitems}
 \vspace{4pt}
 
-\cventry{Python-разработчик, WB Parser (Telegram Mini App)}{Июль 2025 --- Сентябрь 2025}{Москва}
+\cventry{Python-разработчик, WB Parser (Telegram Mini App)}{Июль 2025 --- Сентябрь 2025}{github.com/noobmaster-ru/tg-mini-app-backend}
 \begin{cvitems}
     \item Разработал парсер поисковой выдачи Wildberries с фильтрацией по органической позиции товара.
     \item Упаковал продукт в Telegram Mini App с бэкендом и базой данных; привлёк 220 активных пользователей.
 \end{cvitems}
 \vspace{4pt}
 
-\cventry{Python-разработчик, Placa}{Июль 2024 --- Декабрь 2024}{Москва}
+\cventry{Python-разработчик, Placa}{Июль 2024 --- Декабрь 2024}{github.com/noobmaster-ru/wb\_tables}
 \begin{cvitems}
     \item Разработал сервис аналитики в Google Sheets для продавцов Wildberries на Google Apps Script с интеграцией Wildberries API.
     \item Автоматизировал ежедневную загрузку данных: копирование шаблона таблицы, ввод API-токена, запуск с панели управления.
@@ -123,8 +123,5 @@ Python-разработчик, выпускник бакалавриата ВМ�
     \item Deep Learning School (DLS), направления Computer Vision и NLP --- Школа глубокого обучения МФТИ.
     \item Летняя школа по A/B-тестированию (A/B testing), X5 Tech --- лето 2026.
 \end{cvitems}
-
-\cvsection{Интересы}
-Волейбол, искусственный интеллект, тренажёрный зал, экономика, история.
 
 \end{document}
