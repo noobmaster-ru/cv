@@ -1,10 +1,6 @@
+% Вариант: Python-разработчик (backend).
 % ATS-friendly resume: одна колонка, без таблиц, иконок и графики,
 % стандартные заголовки разделов, контакты текстом, выделяемый текст.
-%
-% Два варианта из одного источника:
-%   pdflatex -jobname=cv_ru_ml      "\def\target{ml}\input{cv_ru.tex}"
-%   pdflatex -jobname=cv_ru_backend "\def\target{backend}\input{cv_ru.tex}"
-% Проще: make (см. Makefile).
 \documentclass[10pt,a4paper]{article}
 
 \usepackage[T2A]{fontenc}
@@ -12,13 +8,7 @@
 \usepackage[russian]{babel}
 \usepackage[left=1.5cm,right=1.5cm,top=1.3cm,bottom=1.3cm]{geometry}
 \usepackage{enumitem}
-\usepackage{etoolbox}
 \usepackage[hidelinks]{hyperref}
-
-% Вариант резюме: ml (по умолчанию) или backend
-\providecommand{\target}{ml}
-% \ifml{текст для ML-варианта}{текст для backend-варианта}
-\newcommand{\ifml}[2]{\ifdefstring{\target}{ml}{#1}{#2}}
 
 \pagestyle{empty}
 \hyphenpenalty=10000
@@ -51,46 +41,34 @@ RAG (Retrieval-Augmented Generation), BM25, OpenAI API, LangChain, промпт-
 \begin{document}
 
 {\LARGE\bfseries Кирилл Козлов}\par\vspace{3pt}
-\ifml{Middle ML-разработчик (Python, LLM, RAG)}{Middle Python-разработчик (FastAPI, PostgreSQL, Kubernetes)}\par\vspace{3pt}
+Middle Python-разработчик (FastAPI, PostgreSQL, Kubernetes)\par\vspace{3pt}
 Москва, Россия | Телефон: +7 (910) 968 1153 | Email: kirillandreevickozlov@yandex.ru\par
 GitHub: github.com/noobmaster-ru | Telegram: @noobmaster\_rus
 
 \cvsection{О себе}
-\ifml{%
-ML-разработчик, бакалавр ВМК МГУ, учусь в магистратуре ВМК МГУ по машинному обучению (кафедра ММП).
-В X5 Tech разработал LLM-агента для проверки договоров: свыше 500 проверок на проде за четыре месяца,
-заключение за 8--19 минут вместо около 97 минут ручной работы юриста, экономический эффект 8 FTE.
-Ключевые навыки: Python, LLM и RAG (LangChain, BM25), FastAPI, PostgreSQL, Kubernetes.%
-}{%
+%
 Python-разработчик, бакалавр ВМК МГУ, учусь в магистратуре ВМК МГУ по машинному обучению.
 В X5 Tech разработал три бэкенд-сервиса на FastAPI и развернул их в Kubernetes: LLM-агент для проверки
 договоров (свыше 500 проверок на проде, эффект 8 FTE), обработка коммунальных платежей (эффект 10 FTE),
 анализ иностранных инвойсов. Ключевые навыки: Python, FastAPI, PostgreSQL (SQLAlchemy, Alembic),
 Apache Kafka, Docker и Kubernetes, GitLab CI/CD.%
-}
+
 
 \cvsection{Ключевые навыки}
 \skilllangs
-\ifml{\skillai\skillframeworks\skilllibs\skilldb\skillinfra}%
-     {\skillframeworks\skilldb\skillinfra\skilllibs\skillai}
+\skillframeworks\skilldb\skillinfra\skilllibs\skillai
 \skillhuman
 
 \cvsection{Опыт работы}
-\cventry{\ifml{ML-разработчик}{Python-разработчик}}{Апрель 2026 --- настоящее время}{X5 Tech, департамент ИИ-агентов, Москва}
+\cventry{Python-разработчик}{Апрель 2026 --- настоящее время}{X5 Tech, департамент ИИ-агентов, Москва}
 \begin{cvitems}
-\ifml{%
-    \item Разработал LLM-агента на LangChain для проверки договоров: свыше 500 проверок на проде за май--август 2026, заключение за 8--19 минут вместо около 97 минут ручной работы юриста; экономический эффект для X5 Group --- 8 FTE.
-    \item Реализовал поиск по корпусу законодательства для RAG: 40 федеральных законов, 366 статей (в том числе ГК РФ), BM25-индекс, подстановка релевантных статей в промпт агента.
-    \item Разработал бэкенд на FastAPI для сервиса обработки коммунальных платежей: приём результатов OCR из Apache Kafka, хранение и выдача во фронтенд; экономический эффект --- 10 FTE.
-    \item Разработал и развернул на dev и prod сервис анализа иностранных инвойсов на OCR и LLM для бизнес-единицы X5 Import; с августа 2026 в пилотной эксплуатации.
-    \item Развернул сервисы в кластере Kubernetes (dev и prod) через Helm и GitLab CI/CD; латентность агентов отслеживается в Grafana.%
-}{%
+%
     \item Разработал бэкенд-сервис на FastAPI и PostgreSQL (SQLAlchemy async, Alembic) для LLM-агента проверки договоров: свыше 500 проверок на проде за май--август 2026; экономический эффект для X5 Group --- 8 FTE.
     \item Сократил время подготовки юридического заключения до 8--19 минут против около 97 минут ручной работы юриста.
     \item Разработал бэкенд на FastAPI для сервиса обработки коммунальных платежей: приём результатов OCR из Apache Kafka, хранение и выдача во фронтенд; экономический эффект --- 10 FTE.
     \item Разработал и развернул на dev и prod stateless REST API для анализа иностранных инвойсов (OCR и LLM) для бизнес-единицы X5 Import; с августа 2026 в пилотной эксплуатации.
     \item Развернул сервисы в кластере Kubernetes (dev и prod): Helm-чарты, сборка и деплой образов в GitLab CI/CD, метрики латентности в Grafana.%
-}
+
 \end{cvitems}
 
 \cvsection{Проекты}

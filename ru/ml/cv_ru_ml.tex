@@ -1,0 +1,104 @@
+% Вариант: ML-разработчик.
+% ATS-friendly resume: одна колонка, без таблиц, иконок и графики,
+% стандартные заголовки разделов, контакты текстом, выделяемый текст.
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage[left=1.5cm,right=1.5cm,top=1.3cm,bottom=1.3cm]{geometry}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+
+\pagestyle{empty}
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\raggedright
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\newcommand{\cvsection}[1]{%
+  \vspace{7pt}{\large\bfseries #1}\par\vspace{2pt}\hrule\vspace{4pt}}
+
+% #1 -- должность, #2 -- даты, #3 -- организация и город
+\newcommand{\cventry}[3]{%
+  \textbf{#1} \textbar{} #3 \textbar{} #2\par\vspace{2pt}}
+
+\newlist{cvitems}{itemize}{1}
+\setlist[cvitems]{label=\textbullet, leftmargin=1.2em, topsep=2pt, itemsep=1pt, parsep=0pt}
+
+% --- Блоки навыков (порядок зависит от варианта) ---
+\newcommand{\skilllangs}{\textbf{Языки программирования:} Python, SQL\par}
+\newcommand{\skillai}{\textbf{Искусственный интеллект и ML:} большие языковые модели (LLM), LLM-агенты,
+RAG (Retrieval-Augmented Generation), BM25, OpenAI API, LangChain, промпт-инжиниринг,
+распознавание документов (OCR), A/B-тестирование (A/B testing), Claude Code\par}
+\newcommand{\skillframeworks}{\textbf{Фреймворки:} FastAPI, SQLAlchemy (async), Alembic, Pydantic, pytest\par}
+\newcommand{\skilllibs}{\textbf{Библиотеки:} asyncio, httpx, aiohttp, pandas, NumPy, scikit-learn, structlog\par}
+\newcommand{\skilldb}{\textbf{Базы данных и очереди:} PostgreSQL, Redis, Apache Kafka\par}
+\newcommand{\skillinfra}{\textbf{Инфраструктура и DevOps:} Docker, Kubernetes (K8s), Helm, GitLab CI/CD, Git, Linux\par}
+\newcommand{\skillhuman}{\textbf{Языки:} русский --- родной, английский --- Intermediate (B1)}
+
+\begin{document}
+
+{\LARGE\bfseries Кирилл Козлов}\par\vspace{3pt}
+Middle ML-разработчик (Python, LLM, RAG)\par\vspace{3pt}
+Москва, Россия | Телефон: +7 (910) 968 1153 | Email: kirillandreevickozlov@yandex.ru\par
+GitHub: github.com/noobmaster-ru | Telegram: @noobmaster\_rus
+
+\cvsection{О себе}
+%
+ML-разработчик, бакалавр ВМК МГУ, учусь в магистратуре ВМК МГУ по машинному обучению (кафедра ММП).
+В X5 Tech разработал LLM-агента для проверки договоров: свыше 500 проверок на проде за четыре месяца,
+заключение за 8--19 минут вместо около 97 минут ручной работы юриста, экономический эффект 8 FTE.
+Ключевые навыки: Python, LLM и RAG (LangChain, BM25), FastAPI, PostgreSQL, Kubernetes.%
+
+
+\cvsection{Ключевые навыки}
+\skilllangs
+\skillai\skillframeworks\skilllibs\skilldb\skillinfra
+\skillhuman
+
+\cvsection{Опыт работы}
+\cventry{ML-разработчик}{Апрель 2026 --- настоящее время}{X5 Tech, департамент ИИ-агентов, Москва}
+\begin{cvitems}
+%
+    \item Разработал LLM-агента на LangChain для проверки договоров: свыше 500 проверок на проде за май--август 2026, заключение за 8--19 минут вместо около 97 минут ручной работы юриста; экономический эффект для X5 Group --- 8 FTE.
+    \item Реализовал поиск по корпусу законодательства для RAG: 40 федеральных законов, 366 статей (в том числе ГК РФ), BM25-индекс, подстановка релевантных статей в промпт агента.
+    \item Разработал бэкенд на FastAPI для сервиса обработки коммунальных платежей: приём результатов OCR из Apache Kafka, хранение и выдача во фронтенд; экономический эффект --- 10 FTE.
+    \item Разработал и развернул на dev и prod сервис анализа иностранных инвойсов на OCR и LLM для бизнес-единицы X5 Import; с августа 2026 в пилотной эксплуатации.
+    \item Развернул сервисы в кластере Kubernetes (dev и prod) через Helm и GitLab CI/CD; латентность агентов отслеживается в Grafana.%
+
+\end{cvitems}
+
+\cvsection{Проекты}
+\cventry{Python-разработчик, AxiomAI}{Октябрь 2025 --- Апрель 2026}{github.com/noobmaster-ru/axiomai}
+\begin{cvitems}
+    \item Разработал и развернул Telegram-бота на aiogram с использованием OpenAI API, PostgreSQL, Redis и Docker.
+    \item Снизил нагрузку на менеджеров на 80\% и повысил скорость ответов в бизнес-коммуникациях.
+\end{cvitems}
+\vspace{4pt}
+
+\cventry{Python-разработчик, WB Parser (Telegram Mini App)}{Июль 2025 --- Сентябрь 2025}{github.com/noobmaster-ru/tg-mini-app-backend}
+\begin{cvitems}
+    \item Разработал парсер поисковой выдачи Wildberries с фильтрацией по органической позиции товара.
+    \item Упаковал продукт в Telegram Mini App с бэкендом и базой данных; привлёк 220 активных пользователей.
+\end{cvitems}
+\vspace{4pt}
+
+\cventry{Python-разработчик, Placa}{Июль 2024 --- Декабрь 2024}{github.com/noobmaster-ru/wb\_tables}
+\begin{cvitems}
+    \item Разработал сервис аналитики в Google Sheets для продавцов Wildberries на Google Apps Script с интеграцией Wildberries API.
+    \item Автоматизировал ежедневную загрузку данных: копирование шаблона таблицы, ввод API-токена, запуск с панели управления.
+    \item Обеспечил около 300 продавцов ежедневными данными о рекламных расходах.
+\end{cvitems}
+
+\cvsection{Образование}
+\cventry{МГУ имени М.В. Ломоносова, магистратура}{Сентябрь 2026 --- настоящее время}{Факультет ВМК, кафедра математических методов прогнозирования (ММП), машинное обучение, Москва}
+\vspace{2pt}
+\cventry{МГУ имени М.В. Ломоносова, бакалавриат}{Август 2022 --- Август 2026}{Факультет вычислительной математики и кибернетики (ВМК), Москва}
+\begin{cvitems}
+    \item Deep Learning School (DLS), направления Computer Vision и NLP --- Школа глубокого обучения МФТИ.
+    \item Летняя школа по A/B-тестированию (A/B testing), X5 Tech --- лето 2026.
+\end{cvitems}
+
+\end{document}

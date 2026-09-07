@@ -1,35 +1,41 @@
-# Четыре PDF из двух исходников: cv_ru.tex и cv_eng.tex.
-# Вариант резюме выбирается макросом \target: ml или backend.
-# Плюс копии русских версий под именами, под которыми они отправляются.
+# Структура: <язык>/<вариант>/<файл>.tex -> .pdf в той же папке.
+#   ru/  backend/ ml/ fd/      русские версии
+#   eng/ backend/ ml/ fd/      английские версии (в eng/ml/ также адресная версия под Plata)
+# Плюс копии под именами, под которыми резюме отправляются.
 
 LATEX = pdflatex -interaction=nonstopmode -halt-on-error
-PDFS = cv_ru_ml.pdf cv_ru_backend.pdf cv_eng_ml.pdf cv_eng_backend.pdf
-COPIES = козлов_кирилл_мл.pdf козлов_кирилл_python.pdf
+
+PDFS = ru/ml/cv_ru_ml.pdf \
+       ru/backend/cv_ru_backend.pdf \
+       ru/fd/cv_ru_fde.pdf \
+       eng/ml/cv_eng_ml.pdf \
+       eng/ml/cv_eng_plata.pdf \
+       eng/backend/cv_eng_backend.pdf \
+       eng/fd/cv_eng_fde.pdf
+
+COPIES = ru/ml/козлов_кирилл_мл.pdf \
+         ru/backend/козлов_кирилл_python.pdf \
+         eng/backend/kozlov_kirill_python.pdf
 
 all: $(PDFS) $(COPIES)
 
-cv_ru_ml.pdf: cv_ru.tex
-	$(LATEX) -jobname=cv_ru_ml "\def\target{ml}\input{cv_ru.tex}"
-
-cv_ru_backend.pdf: cv_ru.tex
-	$(LATEX) -jobname=cv_ru_backend "\def\target{backend}\input{cv_ru.tex}"
-
-cv_eng_ml.pdf: cv_eng.tex
-	$(LATEX) -jobname=cv_eng_ml "\def\target{ml}\input{cv_eng.tex}"
-
-cv_eng_backend.pdf: cv_eng.tex
-	$(LATEX) -jobname=cv_eng_backend "\def\target{backend}\input{cv_eng.tex}"
+# Общее правило: любой .tex собирается в .pdf рядом с собой
+%.pdf: %.tex
+	$(LATEX) -output-directory=$(dir $<) $<
 
 # Копии для отправки: имя файла видно рекрутеру, поэтому оно осмысленное
-козлов_кирилл_мл.pdf: cv_ru_ml.pdf
+ru/ml/козлов_кирилл_мл.pdf: ru/ml/cv_ru_ml.pdf
 	cp $< $@
 
-козлов_кирилл_python.pdf: cv_ru_backend.pdf
+ru/backend/козлов_кирилл_python.pdf: ru/backend/cv_ru_backend.pdf
+	cp $< $@
+
+eng/backend/kozlov_kirill_python.pdf: eng/backend/cv_eng_backend.pdf
 	cp $< $@
 
 tex: all
 
 clean:
-	rm -f *.aux *.log *.out
+	find ru eng -name '*.aux' -o -name '*.log' -o -name '*.out' | xargs rm -f
 
 .PHONY: all tex clean

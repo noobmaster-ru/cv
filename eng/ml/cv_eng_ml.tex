@@ -1,10 +1,6 @@
+% Variant: Machine Learning Developer.
 % ATS-friendly resume: single column, no tables, no icons, no graphics,
 % standard section headings, plain-text contacts, selectable text.
-%
-% Two variants from one source:
-%   pdflatex -jobname=cv_eng_ml      "\def\target{ml}\input{cv_eng.tex}"
-%   pdflatex -jobname=cv_eng_backend "\def\target{backend}\input{cv_eng.tex}"
-% Or simply: make (see Makefile).
 \documentclass[10pt,a4paper]{article}
 
 \usepackage[T1]{fontenc}
@@ -12,13 +8,7 @@
 \usepackage[english]{babel}
 \usepackage[left=1.5cm,right=1.5cm,top=1.3cm,bottom=1.3cm]{geometry}
 \usepackage{enumitem}
-\usepackage{etoolbox}
 \usepackage[hidelinks]{hyperref}
-
-% Resume variant: ml (default) or backend
-\providecommand{\target}{ml}
-% \ifml{text for the ML variant}{text for the backend variant}
-\newcommand{\ifml}[2]{\ifdefstring{\target}{ml}{#1}{#2}}
 
 \pagestyle{empty}
 \hyphenpenalty=10000
@@ -51,48 +41,34 @@ OCR (Optical Character Recognition), A/B testing, PyTorch, Claude Code\par}
 \begin{document}
 
 {\LARGE\bfseries Kirill Kozlov}\par\vspace{3pt}
-\ifml{Mid-level Machine Learning Developer (Python, LLM, RAG)}{Mid-level Python Backend Developer (FastAPI, PostgreSQL, Kubernetes)}\par\vspace{3pt}
+Mid-level Machine Learning Developer (Python, LLM, RAG)\par\vspace{3pt}
 Moscow, Russia | Phone: +7 (910) 968 1153 | Email: kirillkozlov.yar@gmail.com\par
 GitHub: github.com/noobmaster-ru | Telegram: @noobmaster\_rus
 
 \cvsection{Professional Summary}
-\ifml{%
+%
 Machine Learning developer with a Bachelor's degree from the Faculty of Computational Mathematics and
 Cybernetics (CMC) at Lomonosov Moscow State University, currently a Master's student in Machine Learning
 at the same faculty. At X5 Tech built an LLM agent for contract review: over 500 production reviews in four
 months, a legal opinion in 8--19 minutes instead of about 97 minutes of manual lawyer work, business impact of 8 FTE.
 Core skills: Python, LLM and RAG (LangChain, BM25), FastAPI, PostgreSQL, Kubernetes.%
-}{%
-Python backend developer with a Bachelor's degree from the Faculty of Computational Mathematics and
-Cybernetics (CMC) at Lomonosov Moscow State University, currently a Master's student in Machine Learning.
-At X5 Tech built three FastAPI backend services and deployed them to Kubernetes: an LLM agent for contract
-review (over 500 production reviews, 8 FTE impact), utility-bill processing (10 FTE impact), and foreign
-invoice analysis. Core skills: Python, FastAPI, PostgreSQL (SQLAlchemy, Alembic), Apache Kafka,
-Docker and Kubernetes, GitLab CI/CD.%
-}
+
 
 \cvsection{Technical Skills}
 \skilllangs
-\ifml{\skillai\skillframeworks\skilllibs\skilldb\skillinfra}%
-     {\skillframeworks\skilldb\skillinfra\skilllibs\skillai}
+\skillai\skillframeworks\skilllibs\skilldb\skillinfra
 \skillhuman
 
 \cvsection{Work Experience}
-\cventry{\ifml{Machine Learning Developer}{Python Backend Developer}}{April 2026 --- Present}{X5 Tech (X5 Group, Russia's largest grocery retailer), AI Agents Department, Moscow}
+\cventry{Machine Learning Developer}{April 2026 --- Present}{X5 Tech (X5 Group, Russia's largest grocery retailer), AI Agents Department, Moscow}
 \begin{cvitems}
-\ifml{%
+%
     \item Built an LLM agent on LangChain for contract review: over 500 production reviews in May--August 2026, a legal opinion in 8--19 minutes instead of about 97 minutes of manual lawyer work; business impact of 8 FTE for X5 Group.
     \item Implemented retrieval over a legislation corpus for RAG: 40 federal laws, 366 articles (including the Civil Code), BM25 index, injection of relevant articles into the agent prompt.
     \item Developed the FastAPI backend for a utility-bill processing service: consuming OCR results from Apache Kafka, storing them and serving them to the frontend; business impact of 10 FTE.
     \item Built and deployed to dev and prod a foreign invoice analysis service based on OCR and LLM for the X5 Import business unit; in pilot operation since August 2026.
     \item Deployed the services to a Kubernetes cluster (dev and prod) via Helm and GitLab CI/CD; agent latency is tracked in Grafana.%
-}{%
-    \item Developed a FastAPI and PostgreSQL (SQLAlchemy async, Alembic) backend service for an LLM contract-review agent: over 500 production reviews in May--August 2026; business impact of 8 FTE for X5 Group.
-    \item Cut legal opinion preparation time to 8--19 minutes versus about 97 minutes of manual lawyer work.
-    \item Developed the FastAPI backend for a utility-bill processing service: consuming OCR results from Apache Kafka, storing them and serving them to the frontend; business impact of 10 FTE.
-    \item Built and deployed to dev and prod a stateless REST API for foreign invoice analysis (OCR and LLM) for the X5 Import business unit; in pilot operation since August 2026.
-    \item Deployed the services to a Kubernetes cluster (dev and prod): Helm charts, image build and deploy in GitLab CI/CD, latency metrics in Grafana.%
-}
+
 \end{cvitems}
 
 \cvsection{Projects}

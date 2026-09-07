@@ -1,0 +1,86 @@
+% Вариант: Forward Deployed Engineer (ИИ / LLM), русская версия.
+% Подача: бизнес-задача -> поставленная система -> измеренный результат.
+% ATS-friendly: одна колонка, без таблиц, иконок и графики.
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage[left=1.5cm,right=1.5cm,top=1.0cm,bottom=1.0cm]{geometry}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+
+\pagestyle{empty}
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\raggedright
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\newcommand{\cvsection}[1]{%
+  \vspace{5pt}{\large\bfseries #1}\par\vspace{2pt}\hrule\vspace{3pt}}
+
+% #1 -- должность, #2 -- даты, #3 -- организация и город
+\newcommand{\cventry}[3]{%
+  \textbf{#1} \textbar{} #3 \textbar{} #2\par\vspace{2pt}}
+
+\newlist{cvitems}{itemize}{1}
+\setlist[cvitems]{label=\textbullet, leftmargin=1.2em, topsep=2pt, itemsep=1pt, parsep=0pt}
+
+\begin{document}
+
+{\LARGE\bfseries Кирилл Козлов}\par\vspace{3pt}
+Forward Deployed Engineer (ИИ / LLM, Python)\par\vspace{3pt}
+Москва, Россия (GMT+3), рассматриваю удалённую работу и релокацию | Telegram: @noobmaster\_rus\par
+Телефон: +7 (910) 968 1153 | Email: kirillandreevickozlov@yandex.ru | GitHub: github.com/noobmaster-ru
+
+\cvsection{О себе}
+Инженер, который превращает бизнес-процессы в работающие ИИ-системы. В X5 Tech довёл до продакшена три
+задачи внутренних заказчиков: LLM-агент проверки договоров для юридического департамента (свыше 500 проверок
+на проде, заключение за 8--19 минут вместо около 97, эффект 8 FTE), обработка коммунальных платежей на OCR
+(эффект 10 FTE) и сервис анализа иностранных инвойсов на OCR и LLM для бизнес-единицы X5 Import (от первого
+коммита до пилота на проде менее чем за три месяца). Веду полный цикл: FastAPI, LangChain, открытые и коммерческие LLM в закрытом
+корпоративном контуре, Kubernetes, GitLab CI/CD, мониторинг после внедрения. Магистратура ВМК МГУ по машинному обучению.
+
+\cvsection{Ключевые навыки}
+\textbf{Поставка:} end-to-end ownership от постановки задачи до продакшена, быстрое прототипирование,
+развёртывание в закрытом контуре и on-premise, Docker, Kubernetes (K8s), Helm, GitLab CI/CD, Grafana, Git, Linux\par
+\textbf{ИИ и LLM:} большие языковые модели (LLM), LLM-агенты, промпт-инжиниринг, RAG (Retrieval-Augmented
+Generation), BM25, LangChain, OpenAI API, Ollama (Llama 3.2, Qwen 2.5, Qwen3-VL), распознавание документов (OCR),
+извлечение ключевых сущностей из документов, A/B-тестирование (A/B testing), Claude Code\par
+\textbf{Бэкенд:} Python, SQL; FastAPI, SQLAlchemy (async), Alembic, Pydantic, pytest, asyncio, httpx, aiohttp\par
+\textbf{Данные:} PostgreSQL, Redis, Apache Kafka\par
+\textbf{Языки:} русский --- родной, английский --- Intermediate (B1)
+
+\cvsection{Опыт работы}
+\cventry{ML-разработчик}{Апрель 2026 --- настоящее время}{X5 Tech, департамент ИИ-агентов, Москва}
+\begin{cvitems}
+    \item Довёл до продакшена LLM-агента проверки договоров для юридического департамента: мультиагентный пайплайн на LangChain (обработка документов, извлечение реквизитов, проверка контрагента и объекта недвижимости, анализ рисков, юридическое заключение), разделы договора анализируются параллельно. Свыше 500 проверок на проде за май--август 2026; заключение за 8--19 минут вместо около 97 минут ручной работы юриста; эффект 8 FTE.
+    \item Развернул решение внутри корпоративного контура: открытые модели (Llama 3.2, Qwen 2.5, Qwen3-VL для сканов) через Ollama наряду с OpenAI GPT-4o-mini; Kubernetes dev и prod через Helm-чарты и GitLab CI/CD; мониторинг латентности в Grafana.
+    \item Собрал RAG-источник по российскому законодательству (40 федеральных законов, 366 статей, включая ГК РФ, BM25-индекс) с подстановкой релевантных статей в промпты агентов.
+    \item Реализовал извлечение ключевых сущностей из договоров, выписок ЕГРН и доверенностей через OCR и LLM с проверкой согласованности атрибутов между документами.
+    \item Выпустил сервис анализа иностранных инвойсов на OCR и LLM для бизнес-единицы X5 Import: от первого коммита в июне 2026 до деплоя на dev и prod и пилота с внутренней платформой в августе 2026.
+    \item Разработал бэкенд на FastAPI для обработки коммунальных платежей по помещениям X5 Group: приём результатов OCR из Apache Kafka, хранение и выдача во фронтенд; эффект 10 FTE.
+\end{cvitems}
+
+\cvsection{Проекты (запущены для реальных пользователей)}
+\cventry{AxiomAI (Telegram-бот на LLM)}{Октябрь 2025 --- Апрель 2026}{github.com/noobmaster-ru/axiomai}
+\begin{cvitems}
+    \item Разработал и развернул бота на aiogram с OpenAI API, PostgreSQL, Redis и Docker для бизнес-коммуникаций с клиентами; снизил нагрузку на менеджеров на 80\%.
+\end{cvitems}
+\vspace{3pt}
+\cventry{WB Parser}{Июль 2025 --- Сентябрь 2025}{github.com/noobmaster-ru/tg-mini-app-backend}
+\begin{cvitems}
+    \item Парсер поисковой выдачи Wildberries в виде Telegram Mini App с бэкендом и базой данных; 220 активных пользователей.
+\end{cvitems}
+
+\cvsection{Образование}
+\cventry{МГУ имени М.В. Ломоносова, магистратура}{Сентябрь 2026 --- настоящее время}{Факультет ВМК, кафедра математических методов прогнозирования (ММП), машинное обучение}
+\vspace{2pt}
+\cventry{МГУ имени М.В. Ломоносова, бакалавриат}{Август 2022 --- Август 2026}{Факультет вычислительной математики и кибернетики (ВМК)}
+\begin{cvitems}
+    \item Летняя школа по A/B-тестированию (A/B testing), X5 Tech --- лето 2026.
+    \item Deep Learning School (DLS), направления Computer Vision и NLP --- Школа глубокого обучения МФТИ.
+\end{cvitems}
+
+\end{document}

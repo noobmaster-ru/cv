@@ -1,0 +1,92 @@
+% Targeted resume: Forward Deployed Engineer (AI / LLM), generic version.
+% Framing: business problem -> shipped system -> measured outcome.
+% ATS-friendly single column.
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[left=1.5cm,right=1.5cm,top=1.0cm,bottom=1.0cm]{geometry}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+
+\pagestyle{empty}
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\raggedright
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\newcommand{\cvsection}[1]{%
+  \vspace{5pt}{\large\bfseries #1}\par\vspace{2pt}\hrule\vspace{3pt}}
+
+% #1 -- job title, #2 -- dates, #3 -- organization and location
+\newcommand{\cventry}[3]{%
+  \textbf{#1} \textbar{} #3 \textbar{} #2\par\vspace{2pt}}
+
+\newlist{cvitems}{itemize}{1}
+\setlist[cvitems]{label=\textbullet, leftmargin=1.2em, topsep=2pt, itemsep=1pt, parsep=0pt}
+
+\begin{document}
+
+{\LARGE\bfseries Kirill Kozlov}\par\vspace{3pt}
+Forward Deployed Engineer (AI / LLM, Python)\par\vspace{3pt}
+Moscow, Russia (GMT+3), open to remote work and relocation | Telegram: @noobmaster\_rus\par
+Phone: +7 (910) 968 1153 | Email: kirillkozlov.yar@gmail.com | GitHub: github.com/noobmaster-ru
+
+\cvsection{Professional Summary}
+Engineer who turns business processes into deployed AI systems. At X5 Tech I took three business problems
+from problem framing to production for internal customers: an LLM contract-review agent for the legal department
+(over 500 production reviews, a legal opinion in 8--19 minutes instead of about 97, 8 FTE saved), an OCR pipeline
+for utility bills (10 FTE saved) and an OCR and LLM invoice service for the import business unit (first commit
+to a production pilot in under three months). Own the full lifecycle: FastAPI services, LangChain pipelines,
+open-source and commercial LLMs inside a closed corporate perimeter, Kubernetes, GitLab CI/CD, post-deployment
+monitoring. Master's student in Machine Learning at CMC MSU. English B1.
+
+\cvsection{Technical Skills}
+\textbf{Delivery:} end-to-end ownership from problem framing to production, rapid prototyping, deployment in
+private and on-premise environments, Docker, Kubernetes (K8s), Helm, GitLab CI/CD, Grafana, Git, Linux\par
+\textbf{AI and LLM:} Large Language Models (LLM), LLM agents, prompt engineering, RAG (Retrieval-Augmented
+Generation), BM25, LangChain, OpenAI API, Ollama (Llama 3.2, Qwen 2.5, Qwen3-VL), OCR (Optical Character
+Recognition), key entity extraction from business documents, A/B testing, Claude Code\par
+\textbf{Backend:} Python, SQL, Go, C++; FastAPI, SQLAlchemy (async), Alembic, Pydantic, pytest, asyncio, httpx, aiohttp\par
+\textbf{Data:} PostgreSQL, Redis, Apache Kafka\par
+\textbf{Languages:} Russian --- Native, English --- B1
+
+\cvsection{Work Experience}
+\cventry{Machine Learning Developer}{April 2026 --- Present}{X5 Tech (X5 Group, Russia's largest grocery retailer), AI Agents Department, Moscow}
+\begin{cvitems}
+    \item Delivered a production LLM agent for the legal department's contract review: a multi-agent pipeline on LangChain (document processing, requisite extraction, counterparty and property checks, risk analysis, legal opinion) with contract sections analyzed in parallel. Over 500 reviews in production in May--August 2026; a legal opinion in 8--19 minutes instead of about 97 minutes of manual lawyer work; 8 FTE saved.
+    \item Deployed the solution inside the corporate perimeter: open-source models (Llama 3.2, Qwen 2.5, Qwen3-VL for scanned documents) served via Ollama alongside OpenAI GPT-4o-mini; Kubernetes dev and prod via Helm charts and GitLab CI/CD; latency monitoring in Grafana.
+    \item Built a RAG data source over Russian legislation (40 federal laws, 366 articles including the Civil Code, BM25 index) with relevant articles injected into agent prompts.
+    \item Implemented OCR and LLM extraction of key entities from contracts, property registry extracts and powers of attorney, with validation of extracted attributes for consistency across documents.
+    \item Shipped an OCR and LLM service that reads foreign invoices for the X5 Import business unit: from first commit in June 2026 to dev and prod deployment and a pilot with the internal consumer platform in August 2026.
+    \item Developed the FastAPI backend for utility-bill processing across X5 Group premises: OCR results consumed from Apache Kafka, stored and served to the frontend; 10 FTE saved.
+\end{cvitems}
+
+\cvsection{Projects (shipped to real users)}
+\cventry{AxiomAI (LLM-powered Telegram bot)}{October 2025 --- April 2026}{github.com/noobmaster-ru/axiomai}
+\begin{cvitems}
+    \item Built and deployed an aiogram bot on the OpenAI API with PostgreSQL, Redis and Docker for a business's customer communications; reduced manager workload by 80\%.
+\end{cvitems}
+\vspace{3pt}
+\cventry{WB Parser}{July 2025 --- September 2025}{github.com/noobmaster-ru/tg-mini-app-backend}
+\begin{cvitems}
+    \item Wildberries search-results parser delivered as a Telegram Mini App with backend and database; 220 active users.
+\end{cvitems}
+\vspace{3pt}
+\cventry{Placa}{July 2024 --- December 2024}{github.com/noobmaster-ru/wb\_tables}
+\begin{cvitems}
+    \item Self-service Google Sheets analytics for Wildberries sellers (Google Apps Script, Wildberries API, daily automated loads); about 300 sellers.
+\end{cvitems}
+
+\cvsection{Education}
+\cventry{Lomonosov Moscow State University, Master's degree}{September 2026 --- Present}{Faculty of Computational Mathematics and Cybernetics (CMC), Dept. of Mathematical Methods of Forecasting, Machine Learning}
+\vspace{2pt}
+\cventry{Lomonosov Moscow State University, Bachelor's degree}{August 2022 --- August 2026}{Faculty of Computational Mathematics and Cybernetics (CMC)}
+\begin{cvitems}
+    \item Summer School on A/B Testing, X5 Tech --- Summer 2026.
+    \item Deep Learning School (DLS), Computer Vision and NLP tracks --- MIPT School of Deep Learning.
+\end{cvitems}
+
+\end{document}

@@ -1,0 +1,106 @@
+% Variant: Python Backend Developer.
+% ATS-friendly resume: single column, no tables, no icons, no graphics,
+% standard section headings, plain-text contacts, selectable text.
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[left=1.5cm,right=1.5cm,top=1.3cm,bottom=1.3cm]{geometry}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+
+\pagestyle{empty}
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\raggedright
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\newcommand{\cvsection}[1]{%
+  \vspace{7pt}{\large\bfseries #1}\par\vspace{2pt}\hrule\vspace{4pt}}
+
+% #1 -- job title, #2 -- dates, #3 -- organization and location
+\newcommand{\cventry}[3]{%
+  \textbf{#1} \textbar{} #3 \textbar{} #2\par\vspace{2pt}}
+
+\newlist{cvitems}{itemize}{1}
+\setlist[cvitems]{label=\textbullet, leftmargin=1.2em, topsep=2pt, itemsep=1pt, parsep=0pt}
+
+% --- Skill blocks (order depends on the variant) ---
+\newcommand{\skilllangs}{\textbf{Programming Languages:} Python, SQL, Go, C++\par}
+\newcommand{\skillai}{\textbf{Artificial Intelligence and Machine Learning:} Large Language Models (LLM),
+LLM agents, RAG (Retrieval-Augmented Generation), BM25, OpenAI API, LangChain, prompt engineering,
+OCR (Optical Character Recognition), A/B testing, PyTorch, Claude Code\par}
+\newcommand{\skillframeworks}{\textbf{Frameworks:} FastAPI, SQLAlchemy (async), Alembic, Pydantic, aiogram, pytest\par}
+\newcommand{\skilllibs}{\textbf{Libraries:} asyncio, httpx, aiohttp, requests, pandas, NumPy, scikit-learn, structlog\par}
+\newcommand{\skilldb}{\textbf{Databases and Messaging:} PostgreSQL, Redis, Apache Kafka\par}
+\newcommand{\skillinfra}{\textbf{Infrastructure and DevOps:} Docker, Kubernetes (K8s), Helm, GitLab CI/CD, Nginx, Git, Linux\par}
+\newcommand{\skillhuman}{\textbf{Languages:} Russian --- Native, English --- Intermediate (B1)}
+
+\begin{document}
+
+{\LARGE\bfseries Kirill Kozlov}\par\vspace{3pt}
+Mid-level Python Backend Developer (FastAPI, PostgreSQL, Kubernetes)\par\vspace{3pt}
+Moscow, Russia | Phone: +7 (910) 968 1153 | Email: kirillkozlov.yar@gmail.com\par
+GitHub: github.com/noobmaster-ru | Telegram: @noobmaster\_rus
+
+\cvsection{Professional Summary}
+%
+Python backend developer with a Bachelor's degree from the Faculty of Computational Mathematics and
+Cybernetics (CMC) at Lomonosov Moscow State University, currently a Master's student in Machine Learning.
+At X5 Tech built three FastAPI backend services and deployed them to Kubernetes: an LLM agent for contract
+review (over 500 production reviews, 8 FTE impact), utility-bill processing (10 FTE impact), and foreign
+invoice analysis. Core skills: Python, FastAPI, PostgreSQL (SQLAlchemy, Alembic), Apache Kafka,
+Docker and Kubernetes, GitLab CI/CD.%
+
+
+\cvsection{Technical Skills}
+\skilllangs
+\skillframeworks\skilldb\skillinfra\skilllibs\skillai
+\skillhuman
+
+\cvsection{Work Experience}
+\cventry{Python Backend Developer}{April 2026 --- Present}{X5 Tech (X5 Group, Russia's largest grocery retailer), AI Agents Department, Moscow}
+\begin{cvitems}
+%
+    \item Developed a FastAPI and PostgreSQL (SQLAlchemy async, Alembic) backend service for an LLM contract-review agent: over 500 production reviews in May--August 2026; business impact of 8 FTE for X5 Group.
+    \item Cut legal opinion preparation time to 8--19 minutes versus about 97 minutes of manual lawyer work.
+    \item Developed the FastAPI backend for a utility-bill processing service: consuming OCR results from Apache Kafka, storing them and serving them to the frontend; business impact of 10 FTE.
+    \item Built and deployed to dev and prod a stateless REST API for foreign invoice analysis (OCR and LLM) for the X5 Import business unit; in pilot operation since August 2026.
+    \item Deployed the services to a Kubernetes cluster (dev and prod): Helm charts, image build and deploy in GitLab CI/CD, latency metrics in Grafana.%
+
+\end{cvitems}
+
+\cvsection{Projects}
+\cventry{Python Developer, AxiomAI}{October 2025 --- April 2026}{github.com/noobmaster-ru/axiomai}
+\begin{cvitems}
+    \item Built and deployed an aiogram Telegram bot using the OpenAI API, PostgreSQL, Redis, and Docker.
+    \item Reduced manager workload by 80\% and improved response speed in business communications.
+\end{cvitems}
+\vspace{4pt}
+
+\cventry{Python Developer, WB Parser (Telegram Mini App)}{July 2025 --- September 2025}{github.com/noobmaster-ru/tg-mini-app-backend}
+\begin{cvitems}
+    \item Developed a Wildberries search-results parser with filtering by organic product position.
+    \item Delivered the product as a Telegram Mini App with a backend and database; reached 220 active users.
+\end{cvitems}
+\vspace{4pt}
+
+\cventry{Python Developer, Placa}{July 2024 --- December 2024}{github.com/noobmaster-ru/wb\_tables}
+\begin{cvitems}
+    \item Built a Google Sheets analytics service for Wildberries sellers using Google Apps Script and the Wildberries API.
+    \item Automated daily data loading: copy the spreadsheet template, enter an API token, run jobs from a control panel.
+    \item Enabled approximately 300 sellers to receive daily advertising spend data.
+\end{cvitems}
+
+\cvsection{Education}
+\cventry{Lomonosov Moscow State University, Master's degree}{September 2026 --- Present}{Faculty of Computational Mathematics and Cybernetics, Department of Mathematical Methods of Forecasting, major in Machine Learning, Moscow}
+\vspace{2pt}
+\cventry{Lomonosov Moscow State University, Bachelor's degree}{August 2022 --- August 2026}{Faculty of Computational Mathematics and Cybernetics, Moscow}
+\begin{cvitems}
+    \item Deep Learning School (DLS), Computer Vision and NLP tracks --- MIPT School of Deep Learning.
+    \item Summer School on A/B Testing, X5 Tech --- Summer 2026.
+\end{cvitems}
+
+\end{document}
