@@ -11,6 +11,7 @@ ru/                                          русские версии
   fd/       cv_ru_fde.tex       -> Козлов_Кирилл_Forward_Deployed_Engineer.pdf
 eng/                                         английские версии
   backend/  cv_eng_backend.tex  -> Kirill_Kozlov_Python_Backend_Developer.pdf
+            cv_eng_aios.tex     -> Kirill_Kozlov_Software_Engineer_AIOS.pdf   (адресная: AIOS, Software Engineer, AI Growth)
   ml/       cv_eng_ml.tex       -> Kirill_Kozlov_Machine_Learning_Developer.pdf
             cv_eng_plata.tex    -> Kirill_Kozlov_AI_Engineer_Plata.pdf   (адресная: Plata, AI Engineer Middle/Middle+)
   fd/       cv_eng_fde.tex      -> Kirill_Kozlov_Forward_Deployed_Engineer.pdf

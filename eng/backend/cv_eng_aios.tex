@@ -1,0 +1,93 @@
+% Targeted resume: AIOS, "Software Engineer" (AI Growth team)
+% https://jobs.ashbyhq.com/Aios/526acc6c-99c3-425a-bfa8-e0bacad4db09
+% Framing: shipped products used by real customers, end-to-end and production ownership,
+% applied AI, AI-native execution. Wording mirrors the posting where it is true.
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[left=1.5cm,right=1.5cm,top=1.0cm,bottom=1.0cm]{geometry}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+
+\pagestyle{empty}
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\raggedright
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\newcommand{\cvsection}[1]{%
+  \vspace{5pt}{\large\bfseries #1}\par\vspace{2pt}\hrule\vspace{3pt}}
+
+% #1 -- job title, #2 -- dates, #3 -- organization and location
+\newcommand{\cventry}[3]{%
+  \textbf{#1} \textbar{} #3 \textbar{} #2\par\vspace{2pt}}
+
+\newlist{cvitems}{itemize}{1}
+\setlist[cvitems]{label=\textbullet, leftmargin=1.2em, topsep=2pt, itemsep=1pt, parsep=0pt}
+
+\begin{document}
+
+{\LARGE\bfseries Kirill Kozlov}\par\vspace{3pt}
+Software Engineer (Applied AI, full-stack, backend-leaning)\par\vspace{3pt}
+Moscow, Russia (GMT+3), open to remote work and relocation | Telegram: @noobmaster\_rus\par
+Phone: +7 (910) 968 1153 | Email: kirillkozlov.yar@gmail.com | GitHub: github.com/noobmaster-ru
+
+\cvsection{Professional Summary}
+Software engineer who ships products used by real customers and follows them into production. At X5 Tech
+I built an agentic LLM workflow for contract review end to end (Python and FastAPI backend, React and TypeScript
+frontend, PostgreSQL, Kubernetes) and own it in production: over 500 reviews, a legal opinion in 8--19 minutes
+instead of about 97, 8 FTE saved. Before that I shipped three products on my own: Google Sheets analytics used
+daily by about 300 sellers, a Telegram Mini App with 220 active users, and an OpenAI-powered bot that cut
+manager workload by 80\%. I use Claude Code daily as a force multiplier and stay accountable for the result.
+Interested in the AI Growth team: customer-facing AI, internal automation, experimentation. CS bachelor's from CMC MSU; English B2.
+
+\cvsection{Technical Skills}
+\textbf{Product and Delivery:} end-to-end ownership from problem to production, shipping fast with simple
+designs, production monitoring (Grafana), experimentation and A/B testing, code review, Claude Code (daily),
+Git, GitLab CI/CD\par
+\textbf{Languages:} Python, TypeScript, SQL, Go, C++\par
+\textbf{Backend:} FastAPI, REST APIs, SQLAlchemy (async), Alembic, Pydantic, pytest, asyncio, httpx, Apache Kafka\par
+\textbf{Frontend:} React, TypeScript\par
+\textbf{Data and Infrastructure:} PostgreSQL, Redis, Docker, Kubernetes (K8s), Helm\par
+\textbf{Applied AI:} Large Language Models (LLM), agentic workflows, prompt engineering, RAG, LangChain, OpenAI API,
+OCR (Optical Character Recognition)\par
+\textbf{Spoken languages:} Russian --- Native, English --- B2
+
+\cvsection{Work Experience}
+\cventry{Machine Learning Developer}{April 2026 --- Present}{X5 Tech (X5 Group, Russia's largest grocery retailer), AI Agents Department, Moscow}
+\begin{cvitems}
+    \item Built an agentic LLM workflow for contract review end to end: FastAPI and PostgreSQL backend, React and TypeScript frontend, multi-agent pipeline on LangChain (document processing, requisite extraction, counterparty and property checks, risk analysis, legal opinion). Shipped to production and own it there: over 500 reviews in May--August 2026, a legal opinion in 8--19 minutes instead of about 97 minutes of manual lawyer work, 8 FTE saved.
+    \item Own production: Kubernetes dev and prod via Helm and GitLab CI/CD, per-agent latency metrics in Grafana, request budgets and timeouts for minute-long OCR and LLM calls.
+    \item Shipped an OCR and LLM service that reads foreign invoices for the X5 Import business unit: from first commit in June 2026 to dev and prod deployment and a pilot in August 2026.
+    \item Developed the FastAPI backend for utility-bill processing: OCR results consumed from Apache Kafka, stored and served to the frontend; 10 FTE saved.
+\end{cvitems}
+
+\cvsection{Products Shipped to Real Customers (solo)}
+\cventry{AxiomAI (OpenAI-powered Telegram bot)}{October 2025 --- April 2026}{github.com/noobmaster-ru/axiomai}
+\begin{cvitems}
+    \item Bot for a business's customer communications on aiogram, OpenAI API, PostgreSQL, Redis and Docker; reduced manager workload by 80\%.
+\end{cvitems}
+\vspace{3pt}
+\cventry{WB Parser}{July 2025 --- September 2025}{github.com/noobmaster-ru/tg-mini-app-backend}
+\begin{cvitems}
+    \item Wildberries search-results parser delivered as a Telegram Mini App with frontend, backend and database; 220 active users.
+\end{cvitems}
+\vspace{3pt}
+\cventry{Placa}{July 2024 --- December 2024}{github.com/noobmaster-ru/wb\_tables}
+\begin{cvitems}
+    \item Google Sheets analytics for Wildberries sellers: self-service Google Apps Script template with Wildberries API integration and daily automated loads; about 300 sellers use it daily.
+\end{cvitems}
+
+\cvsection{Education}
+\cventry{Lomonosov Moscow State University, Bachelor's degree in Computer Science}{August 2022 --- August 2026}{Faculty of Computational Mathematics and Cybernetics (CMC)}
+\vspace{2pt}
+\cventry{Lomonosov Moscow State University, Master's degree}{September 2026 --- Present}{Faculty of Computational Mathematics and Cybernetics (CMC), Machine Learning}
+\begin{cvitems}
+    \item Summer School on A/B Testing, X5 Tech --- Summer 2026.
+    \item Deep Learning School (DLS), Computer Vision and NLP tracks --- MIPT School of Deep Learning.
+\end{cvitems}
+
+\end{document}
