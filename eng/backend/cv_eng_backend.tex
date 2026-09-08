@@ -8,7 +8,9 @@
 \usepackage[english]{babel}
 \usepackage[left=1.5cm,right=1.5cm,top=1.3cm,bottom=1.3cm]{geometry}
 \usepackage{enumitem}
-\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+\definecolor{linkblue}{RGB}{0,51,120}
+\usepackage[colorlinks=true,urlcolor=linkblue,linkcolor=black,citecolor=black]{hyperref}
 
 \pagestyle{empty}
 \hyphenpenalty=10000
@@ -42,8 +44,8 @@ OCR (Optical Character Recognition), A/B testing, PyTorch, Claude Code\par}
 
 {\LARGE\bfseries Kirill Kozlov}\par\vspace{3pt}
 Mid-level Python Backend Developer (FastAPI, PostgreSQL, Kubernetes)\par\vspace{3pt}
-Moscow, Russia | Phone: +7 (910) 968 1153 | Email: kirillkozlov.yar@gmail.com\par
-GitHub: github.com/noobmaster-ru | LinkedIn: linkedin.com/in/kirill1kozlov | Telegram: @noobmaster\_rus
+Moscow, Russia | Phone: +7 (910) 968 1153 | Email: \href{mailto:kirillkozlov.yar@gmail.com}{kirillkozlov.yar@gmail.com}\par
+GitHub: \href{https://github.com/noobmaster-ru}{github.com/noobmaster-ru} | LinkedIn: \href{https://www.linkedin.com/in/kirill1kozlov/}{linkedin.com/in/kirill1kozlov} | Telegram: \href{https://t.me/noobmaster_rus}{@noobmaster\_rus}
 
 \cvsection{Professional Summary}
 %
@@ -73,21 +75,21 @@ Docker and Kubernetes, GitLab CI/CD.%
 \end{cvitems}
 
 \cvsection{Projects}
-\cventry{Python Developer, AxiomAI}{October 2025 --- April 2026}{github.com/noobmaster-ru/axiomai}
+\cventry{Python Developer, AxiomAI}{October 2025 --- April 2026}{\href{https://github.com/noobmaster-ru/axiomai}{github.com/noobmaster-ru/axiomai}}
 \begin{cvitems}
     \item Built and deployed an aiogram Telegram bot using the OpenAI API, PostgreSQL, Redis, and Docker.
     \item Reduced manager workload by 80\% and improved response speed in business communications.
 \end{cvitems}
 \vspace{4pt}
 
-\cventry{Python Developer, WB Parser (Telegram Mini App)}{July 2025 --- September 2025}{github.com/noobmaster-ru/tg-mini-app-backend}
+\cventry{Python Developer, WB Parser (Telegram Mini App)}{July 2025 --- September 2025}{\href{https://github.com/noobmaster-ru/tg-mini-app-backend}{github.com/noobmaster-ru/tg-mini-app-backend}}
 \begin{cvitems}
     \item Developed a Wildberries search-results parser with filtering by organic product position.
     \item Delivered the product as a Telegram Mini App with a backend and database; reached 220 active users.
 \end{cvitems}
 \vspace{4pt}
 
-\cventry{Python Developer, Placa}{July 2024 --- December 2024}{github.com/noobmaster-ru/wb\_tables}
+\cventry{Python Developer, Placa}{July 2024 --- December 2024}{\href{https://github.com/noobmaster-ru/wb_tables}{github.com/noobmaster-ru/wb\_tables}}
 \begin{cvitems}
     \item Built a Google Sheets analytics service for Wildberries sellers using Google Apps Script and the Wildberries API.
     \item Automated daily data loading: copy the spreadsheet template, enter an API token, run jobs from a control panel.

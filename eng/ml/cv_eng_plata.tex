@@ -8,7 +8,9 @@
 \usepackage[english]{babel}
 \usepackage[left=1.5cm,right=1.5cm,top=1.0cm,bottom=1.0cm]{geometry}
 \usepackage{enumitem}
-\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+\definecolor{linkblue}{RGB}{0,51,120}
+\usepackage[colorlinks=true,urlcolor=linkblue,linkcolor=black,citecolor=black]{hyperref}
 
 \pagestyle{empty}
 \hyphenpenalty=10000
@@ -32,8 +34,8 @@
 {\LARGE\bfseries Kirill Kozlov}\par\vspace{3pt}
 Middle AI Engineer (LLM, RAG, OCR, Python)\par\vspace{3pt}
 Moscow, Russia (GMT+3), open to remote work and relocation\par
-Phone: +7 (910) 968 1153 | Email: kirillkozlov.yar@gmail.com | Telegram: @noobmaster\_rus\par
-GitHub: github.com/noobmaster-ru | LinkedIn: linkedin.com/in/kirill1kozlov
+Phone: +7 (910) 968 1153 | Email: \href{mailto:kirillkozlov.yar@gmail.com}{kirillkozlov.yar@gmail.com} | Telegram: \href{https://t.me/noobmaster_rus}{@noobmaster\_rus}\par
+GitHub: \href{https://github.com/noobmaster-ru}{github.com/noobmaster-ru} | LinkedIn: \href{https://www.linkedin.com/in/kirill1kozlov/}{linkedin.com/in/kirill1kozlov}
 
 \cvsection{Professional Summary}
 AI Engineer with hands-on LLM experience in production. At X5 Tech I built and shipped a business-critical
@@ -69,12 +71,12 @@ key entity extraction and attribute validation from business documents, PyMuPDF,
 \end{cvitems}
 
 \cvsection{Projects}
-\cventry{AxiomAI (LLM-powered Telegram bot)}{October 2025 --- April 2026}{github.com/noobmaster-ru/axiomai}
+\cventry{AxiomAI (LLM-powered Telegram bot)}{October 2025 --- April 2026}{\href{https://github.com/noobmaster-ru/axiomai}{github.com/noobmaster-ru/axiomai}}
 \begin{cvitems}
     \item Built and deployed an aiogram bot on the OpenAI API with PostgreSQL, Redis and Docker; reduced manager workload by 80\% in business communications.
 \end{cvitems}
 \vspace{3pt}
-\cventry{WB Parser}{July 2025 --- September 2025}{github.com/noobmaster-ru/tg-mini-app-backend}
+\cventry{WB Parser}{July 2025 --- September 2025}{\href{https://github.com/noobmaster-ru/tg-mini-app-backend}{github.com/noobmaster-ru/tg-mini-app-backend}}
 \begin{cvitems}
     \item Wildberries search-results parser with a Mini App frontend, backend and database; 220 active users.
 \end{cvitems}

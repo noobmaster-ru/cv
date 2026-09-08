@@ -8,7 +8,9 @@
 \usepackage[russian]{babel}
 \usepackage[left=1.5cm,right=1.5cm,top=1.3cm,bottom=1.3cm]{geometry}
 \usepackage{enumitem}
-\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+\definecolor{linkblue}{RGB}{0,51,120}
+\usepackage[colorlinks=true,urlcolor=linkblue,linkcolor=black,citecolor=black]{hyperref}
 
 \pagestyle{empty}
 \hyphenpenalty=10000
@@ -42,8 +44,8 @@ RAG (Retrieval-Augmented Generation), BM25, OpenAI API, LangChain, промпт-
 
 {\LARGE\bfseries Кирилл Козлов}\par\vspace{3pt}
 Middle ML-разработчик (Python, LLM, RAG)\par\vspace{3pt}
-Москва, Россия | Телефон: +7 (910) 968 1153 | Email: kirillandreevickozlov@yandex.ru\par
-GitHub: github.com/noobmaster-ru | LinkedIn: linkedin.com/in/kirill1kozlov | Telegram: @noobmaster\_rus
+Москва, Россия | Телефон: +7 (910) 968 1153 | Email: \href{mailto:kirillandreevickozlov@yandex.ru}{kirillandreevickozlov@yandex.ru}\par
+GitHub: \href{https://github.com/noobmaster-ru}{github.com/noobmaster-ru} | LinkedIn: \href{https://www.linkedin.com/in/kirill1kozlov/}{linkedin.com/in/kirill1kozlov} | Telegram: \href{https://t.me/noobmaster_rus}{@noobmaster\_rus}
 
 \cvsection{О себе}
 %
@@ -71,21 +73,21 @@ ML-разработчик, бакалавр ВМК МГУ, учусь в маг�
 \end{cvitems}
 
 \cvsection{Проекты}
-\cventry{Python-разработчик, AxiomAI}{Октябрь 2025 --- Апрель 2026}{github.com/noobmaster-ru/axiomai}
+\cventry{Python-разработчик, AxiomAI}{Октябрь 2025 --- Апрель 2026}{\href{https://github.com/noobmaster-ru/axiomai}{github.com/noobmaster-ru/axiomai}}
 \begin{cvitems}
     \item Разработал и развернул Telegram-бота на aiogram с использованием OpenAI API, PostgreSQL, Redis и Docker.
     \item Снизил нагрузку на менеджеров на 80\% и повысил скорость ответов в бизнес-коммуникациях.
 \end{cvitems}
 \vspace{4pt}
 
-\cventry{Python-разработчик, WB Parser (Telegram Mini App)}{Июль 2025 --- Сентябрь 2025}{github.com/noobmaster-ru/tg-mini-app-backend}
+\cventry{Python-разработчик, WB Parser (Telegram Mini App)}{Июль 2025 --- Сентябрь 2025}{\href{https://github.com/noobmaster-ru/tg-mini-app-backend}{github.com/noobmaster-ru/tg-mini-app-backend}}
 \begin{cvitems}
     \item Разработал парсер поисковой выдачи Wildberries с фильтрацией по органической позиции товара.
     \item Упаковал продукт в Telegram Mini App с бэкендом и базой данных; привлёк 220 активных пользователей.
 \end{cvitems}
 \vspace{4pt}
 
-\cventry{Python-разработчик, Placa}{Июль 2024 --- Декабрь 2024}{github.com/noobmaster-ru/wb\_tables}
+\cventry{Python-разработчик, Placa}{Июль 2024 --- Декабрь 2024}{\href{https://github.com/noobmaster-ru/wb_tables}{github.com/noobmaster-ru/wb\_tables}}
 \begin{cvitems}
     \item Разработал сервис аналитики в Google Sheets для продавцов Wildberries на Google Apps Script с интеграцией Wildberries API.
     \item Автоматизировал ежедневную загрузку данных: копирование шаблона таблицы, ввод API-токена, запуск с панели управления.

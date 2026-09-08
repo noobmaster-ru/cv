@@ -8,7 +8,9 @@
 \usepackage[russian]{babel}
 \usepackage[left=1.5cm,right=1.5cm,top=1.0cm,bottom=1.0cm]{geometry}
 \usepackage{enumitem}
-\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+\definecolor{linkblue}{RGB}{0,51,120}
+\usepackage[colorlinks=true,urlcolor=linkblue,linkcolor=black,citecolor=black]{hyperref}
 
 \pagestyle{empty}
 \hyphenpenalty=10000
@@ -32,8 +34,8 @@
 {\LARGE\bfseries Кирилл Козлов}\par\vspace{3pt}
 Forward Deployed Engineer (ИИ / LLM, Python)\par\vspace{3pt}
 Москва, Россия (GMT+3), рассматриваю удалённую работу и релокацию\par
-Телефон: +7 (910) 968 1153 | Email: kirillandreevickozlov@yandex.ru | Telegram: @noobmaster\_rus\par
-GitHub: github.com/noobmaster-ru | LinkedIn: linkedin.com/in/kirill1kozlov
+Телефон: +7 (910) 968 1153 | Email: \href{mailto:kirillandreevickozlov@yandex.ru}{kirillandreevickozlov@yandex.ru} | Telegram: \href{https://t.me/noobmaster_rus}{@noobmaster\_rus}\par
+GitHub: \href{https://github.com/noobmaster-ru}{github.com/noobmaster-ru} | LinkedIn: \href{https://www.linkedin.com/in/kirill1kozlov/}{linkedin.com/in/kirill1kozlov}
 
 \cvsection{О себе}
 Инженер, который превращает бизнес-процессы в работающие ИИ-системы. В X5 Tech довёл до продакшена три
@@ -65,12 +67,12 @@ Generation), BM25, LangChain, OpenAI API, Ollama (Llama 3.2, Qwen 2.5, Qwen3-VL)
 \end{cvitems}
 
 \cvsection{Проекты (запущены для реальных пользователей)}
-\cventry{AxiomAI (Telegram-бот на LLM)}{Октябрь 2025 --- Апрель 2026}{github.com/noobmaster-ru/axiomai}
+\cventry{AxiomAI (Telegram-бот на LLM)}{Октябрь 2025 --- Апрель 2026}{\href{https://github.com/noobmaster-ru/axiomai}{github.com/noobmaster-ru/axiomai}}
 \begin{cvitems}
     \item Разработал и развернул бота на aiogram с OpenAI API, PostgreSQL, Redis и Docker для бизнес-коммуникаций с клиентами; снизил нагрузку на менеджеров на 80\%.
 \end{cvitems}
 \vspace{3pt}
-\cventry{WB Parser}{Июль 2025 --- Сентябрь 2025}{github.com/noobmaster-ru/tg-mini-app-backend}
+\cventry{WB Parser}{Июль 2025 --- Сентябрь 2025}{\href{https://github.com/noobmaster-ru/tg-mini-app-backend}{github.com/noobmaster-ru/tg-mini-app-backend}}
 \begin{cvitems}
     \item Парсер поисковой выдачи Wildberries в виде Telegram Mini App с бэкендом и базой данных; 220 активных пользователей.
 \end{cvitems}
