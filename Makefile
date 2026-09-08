@@ -9,7 +9,7 @@ PDFS = ru/backend/Козлов_Кирилл_Python-разработчик.pdf \
        ru/ml/Козлов_Кирилл_ML-разработчик.pdf \
        ru/fd/Козлов_Кирилл_Forward_Deployed_Engineer.pdf \
        eng/backend/Kirill_Kozlov_Python_Backend_Developer.pdf \
-       eng/backend/Kirill_Kozlov_Software_Engineer_AIOS.pdf \
+       eng/backend/Kirill_Kozlov_Software_Engineer.pdf \
        eng/ml/Kirill_Kozlov_Machine_Learning_Developer.pdf \
        eng/ml/Kirill_Kozlov_AI_Engineer_Plata.pdf \
        eng/fd/Kirill_Kozlov_Forward_Deployed_Engineer.pdf
@@ -33,8 +33,8 @@ ru/fd/Козлов_Кирилл_Forward_Deployed_Engineer.pdf: ru/fd/cv_ru_fde.t
 eng/backend/Kirill_Kozlov_Python_Backend_Developer.pdf: eng/backend/cv_eng_backend.tex
 	$(call build,eng/backend,cv_eng_backend.tex,Kirill_Kozlov_Python_Backend_Developer)
 
-eng/backend/Kirill_Kozlov_Software_Engineer_AIOS.pdf: eng/backend/cv_eng_aios.tex
-	$(call build,eng/backend,cv_eng_aios.tex,Kirill_Kozlov_Software_Engineer_AIOS)
+eng/backend/Kirill_Kozlov_Software_Engineer.pdf: eng/backend/cv_eng_aios.tex
+	$(call build,eng/backend,cv_eng_aios.tex,Kirill_Kozlov_Software_Engineer)
 
 eng/ml/Kirill_Kozlov_Machine_Learning_Developer.pdf: eng/ml/cv_eng_ml.tex
 	$(call build,eng/ml,cv_eng_ml.tex,Kirill_Kozlov_Machine_Learning_Developer)
