@@ -6,7 +6,7 @@
 \usepackage[T2A]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[russian]{babel}
-\usepackage[left=1.5cm,right=1.5cm,top=1.0cm,bottom=1.0cm]{geometry}
+\usepackage[left=1.2cm,right=1.2cm,top=0.8cm,bottom=0.8cm]{geometry}
 \usepackage{enumitem}
 \usepackage{xcolor}
 \definecolor{linkblue}{RGB}{0,51,120}
@@ -24,10 +24,10 @@
 
 % #1 -- должность, #2 -- даты, #3 -- организация и город
 \newcommand{\cventry}[3]{%
-  \textbf{#1} \textbar{} #3 \textbar{} #2\par\vspace{2pt}}
+  \textbf{#1} \textbar{} #3 \textbar{} #2\par\vspace{1pt}}
 
 \newlist{cvitems}{itemize}{1}
-\setlist[cvitems]{label=\textbullet, leftmargin=1.2em, topsep=2pt, itemsep=1pt, parsep=0pt}
+\setlist[cvitems]{label=\textbullet, leftmargin=1.2em, topsep=2pt, itemsep=0pt, parsep=0pt}
 
 \begin{document}
 
@@ -38,8 +38,9 @@ Forward Deployed Engineer (ИИ / LLM, Python)\par\vspace{3pt}
 GitHub: \href{https://github.com/noobmaster-ru}{github.com/noobmaster-ru} | LinkedIn: \href{https://www.linkedin.com/in/kirill1kozlov/}{linkedin.com/in/kirill1kozlov}
 
 \cvsection{О себе}
-Инженер, который превращает бизнес-процессы в работающие ИИ-системы. В X5 Tech довёл до продакшена три
-задачи внутренних заказчиков: LLM-агент проверки договоров для юридического департамента (свыше 500 проверок
+Инженер, который превращает бизнес-процессы в работающие ИИ-системы. С сентября 2026 в X5 Import (отдел
+логистических решений) разрабатываю систему для 90\% иностранных поставок X5 Retail Group; до этого в департаменте
+ИИ-агентов X5 Tech довёл до продакшена три задачи внутренних заказчиков: LLM-агент проверки договоров для юридического департамента (свыше 500 проверок
 на проде, заключение за 8--19 минут вместо около 97, эффект 8 FTE), обработка коммунальных платежей на OCR
 (эффект 10 FTE) и сервис анализа иностранных инвойсов на OCR и LLM для бизнес-единицы X5 Import (от первого
 коммита до пилота на проде менее чем за три месяца). Веду полный цикл: FastAPI, LangChain, открытые и коммерческие LLM в закрытом
@@ -56,7 +57,13 @@ Generation), BM25, LangChain, OpenAI API, Ollama (Llama 3.2, Qwen 2.5, Qwen3-VL)
 \textbf{Языки:} русский --- родной, английский --- Upper-Intermediate (B2)
 
 \cvsection{Опыт работы}
-\cventry{ML-разработчик}{Апрель 2026 --- настоящее время}{X5 Tech, департамент ИИ-агентов, Москва}
+\cventry{Python-разработчик (Junior)}{Сентябрь 2026 --- настоящее время}{X5 Import, отдел логистических решений}
+\begin{cvitems}
+    \item Разрабатываю систему, обслуживающую 90\% иностранных поставок X5 Retail Group для её торговых сетей.
+\end{cvitems}
+\vspace{2pt}
+
+\cventry{ML-разработчик (стажёр)}{Апрель 2026 --- Август 2026}{X5 Tech, департамент ИИ-агентов, Москва}
 \begin{cvitems}
     \item Довёл до продакшена LLM-агента проверки договоров для юридического департамента: мультиагентный пайплайн на LangChain (обработка документов, извлечение реквизитов, проверка контрагента и объекта недвижимости, анализ рисков, юридическое заключение), разделы договора анализируются параллельно. Свыше 500 проверок на проде за май--август 2026; заключение за 8--19 минут вместо около 97 минут ручной работы юриста; эффект 8 FTE.
     \item Развернул решение внутри корпоративного контура: открытые модели (Llama 3.2, Qwen 2.5, Qwen3-VL для сканов) через Ollama наряду с OpenAI GPT-4o-mini; Kubernetes dev и prod через Helm-чарты и GitLab CI/CD; мониторинг латентности в Grafana.

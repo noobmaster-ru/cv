@@ -6,7 +6,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
-\usepackage[left=1.5cm,right=1.5cm,top=1.3cm,bottom=1.3cm]{geometry}
+\usepackage[left=1.2cm,right=1.2cm,top=0.8cm,bottom=0.8cm]{geometry}
 \usepackage{enumitem}
 \usepackage{xcolor}
 \definecolor{linkblue}{RGB}{0,51,120}
@@ -20,14 +20,14 @@
 \setlength{\parskip}{0pt}
 
 \newcommand{\cvsection}[1]{%
-  \vspace{7pt}{\large\bfseries #1}\par\vspace{2pt}\hrule\vspace{4pt}}
+  \vspace{5pt}{\large\bfseries #1}\par\vspace{2pt}\hrule\vspace{4pt}}
 
 % #1 -- job title, #2 -- dates, #3 -- organization and location
 \newcommand{\cventry}[3]{%
-  \textbf{#1} \textbar{} #3 \textbar{} #2\par\vspace{2pt}}
+  \textbf{#1} \textbar{} #3 \textbar{} #2\par\vspace{1pt}}
 
 \newlist{cvitems}{itemize}{1}
-\setlist[cvitems]{label=\textbullet, leftmargin=1.2em, topsep=2pt, itemsep=1pt, parsep=0pt}
+\setlist[cvitems]{label=\textbullet, leftmargin=1.2em, topsep=2pt, itemsep=0pt, parsep=0pt}
 
 % --- Skill blocks (order depends on the variant) ---
 \newcommand{\skilllangs}{\textbf{Programming Languages:} Python, SQL, Go, C++\par}
@@ -43,7 +43,7 @@ OCR (Optical Character Recognition), A/B testing, PyTorch, Claude Code\par}
 \begin{document}
 
 {\LARGE\bfseries Kirill Kozlov}\par\vspace{3pt}
-Mid-level Python Backend Developer (FastAPI, PostgreSQL, Kubernetes)\par\vspace{3pt}
+Junior Python Backend Developer (FastAPI, PostgreSQL, Kubernetes)\par\vspace{3pt}
 Moscow, Russia | Phone: +7 (910) 968 1153 | Email: \href{mailto:kirillkozlov.yar@gmail.com}{kirillkozlov.yar@gmail.com}\par
 GitHub: \href{https://github.com/noobmaster-ru}{github.com/noobmaster-ru} | LinkedIn: \href{https://www.linkedin.com/in/kirill1kozlov/}{linkedin.com/in/kirill1kozlov} | Telegram: \href{https://t.me/noobmaster_rus}{@noobmaster\_rus}
 
@@ -51,7 +51,8 @@ GitHub: \href{https://github.com/noobmaster-ru}{github.com/noobmaster-ru} | Link
 %
 Python backend developer with a Bachelor's degree from the Faculty of Computational Mathematics and
 Cybernetics (CMC) at Lomonosov Moscow State University, currently a Master's student in Machine Learning.
-At X5 Tech built three FastAPI backend services and deployed them to Kubernetes: an LLM agent for contract
+Since September 2026 at X5 Import (Logistics Solutions Department) developing the system that handles 90\% of X5 Retail
+Group's foreign supplies; before that, at the X5 Tech AI Agents Department, built three FastAPI backend services and deployed them to Kubernetes: an LLM agent for contract
 review (over 500 production reviews, 8 FTE impact), utility-bill processing (10 FTE impact), and foreign
 invoice analysis. Core skills: Python, FastAPI, PostgreSQL (SQLAlchemy, Alembic), Apache Kafka,
 Docker and Kubernetes, GitLab CI/CD.%
@@ -63,7 +64,13 @@ Docker and Kubernetes, GitLab CI/CD.%
 \skillhuman
 
 \cvsection{Work Experience}
-\cventry{Python Backend Developer}{April 2026 --- Present}{X5 Tech (X5 Group, Russia's largest grocery retailer), AI Agents Department, Moscow}
+\cventry{Python Backend Developer (Junior)}{September 2026 --- Present}{X5 Tech (X5 Group, Russia's largest grocery retailer), Logistics Solutions Department, X5 Import, Moscow}
+\begin{cvitems}
+    \item Developing the system that handles 90\% of all foreign supplies X5 Retail Group purchases for its retail chains.
+\end{cvitems}
+\vspace{2pt}
+
+\cventry{Python Backend Developer (Intern)}{April 2026 --- August 2026}{X5 Tech, AI Agents Department, Moscow}
 \begin{cvitems}
 %
     \item Developed a FastAPI and PostgreSQL (SQLAlchemy async, Alembic) backend service for an LLM contract-review agent: over 500 production reviews in May--August 2026; business impact of 8 FTE for X5 Group.

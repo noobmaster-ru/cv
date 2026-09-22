@@ -6,7 +6,7 @@
 \usepackage[T2A]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[russian]{babel}
-\usepackage[left=1.5cm,right=1.5cm,top=1.3cm,bottom=1.3cm]{geometry}
+\usepackage[left=1.2cm,right=1.2cm,top=0.8cm,bottom=0.8cm]{geometry}
 \usepackage{enumitem}
 \usepackage{xcolor}
 \definecolor{linkblue}{RGB}{0,51,120}
@@ -20,14 +20,14 @@
 \setlength{\parskip}{0pt}
 
 \newcommand{\cvsection}[1]{%
-  \vspace{7pt}{\large\bfseries #1}\par\vspace{2pt}\hrule\vspace{4pt}}
+  \vspace{5pt}{\large\bfseries #1}\par\vspace{2pt}\hrule\vspace{4pt}}
 
 % #1 -- должность, #2 -- даты, #3 -- организация и город
 \newcommand{\cventry}[3]{%
-  \textbf{#1} \textbar{} #3 \textbar{} #2\par\vspace{2pt}}
+  \textbf{#1} \textbar{} #3 \textbar{} #2\par\vspace{1pt}}
 
 \newlist{cvitems}{itemize}{1}
-\setlist[cvitems]{label=\textbullet, leftmargin=1.2em, topsep=2pt, itemsep=1pt, parsep=0pt}
+\setlist[cvitems]{label=\textbullet, leftmargin=1.2em, topsep=2pt, itemsep=0pt, parsep=0pt}
 
 % --- Блоки навыков (порядок зависит от варианта) ---
 \newcommand{\skilllangs}{\textbf{Языки программирования:} Python, SQL\par}
@@ -43,14 +43,15 @@ RAG (Retrieval-Augmented Generation), BM25, OpenAI API, LangChain, промпт-
 \begin{document}
 
 {\LARGE\bfseries Кирилл Козлов}\par\vspace{3pt}
-Middle Python-разработчик (FastAPI, PostgreSQL, Kubernetes)\par\vspace{3pt}
+Junior Python-разработчик (FastAPI, PostgreSQL, Kubernetes)\par\vspace{3pt}
 Москва, Россия | Телефон: +7 (910) 968 1153 | Email: \href{mailto:kirillandreevickozlov@yandex.ru}{kirillandreevickozlov@yandex.ru}\par
 GitHub: \href{https://github.com/noobmaster-ru}{github.com/noobmaster-ru} | LinkedIn: \href{https://www.linkedin.com/in/kirill1kozlov/}{linkedin.com/in/kirill1kozlov} | Telegram: \href{https://t.me/noobmaster_rus}{@noobmaster\_rus}
 
 \cvsection{О себе}
 %
 Python-разработчик, бакалавр ВМК МГУ, учусь в магистратуре ВМК МГУ по машинному обучению.
-В X5 Tech разработал три бэкенд-сервиса на FastAPI и развернул их в Kubernetes: LLM-агент для проверки
+С сентября 2026 в X5 Import (отдел логистических решений) разрабатываю систему для 90\% иностранных поставок
+X5 Retail Group; до этого в департаменте ИИ-агентов X5 Tech разработал три бэкенд-сервиса на FastAPI и развернул их в Kubernetes: LLM-агент для проверки
 договоров (свыше 500 проверок на проде, эффект 8 FTE), обработка коммунальных платежей (эффект 10 FTE),
 анализ иностранных инвойсов. Ключевые навыки: Python, FastAPI, PostgreSQL (SQLAlchemy, Alembic),
 Apache Kafka, Docker и Kubernetes, GitLab CI/CD.%
@@ -62,7 +63,13 @@ Apache Kafka, Docker и Kubernetes, GitLab CI/CD.%
 \skillhuman
 
 \cvsection{Опыт работы}
-\cventry{Python-разработчик}{Апрель 2026 --- настоящее время}{X5 Tech, департамент ИИ-агентов, Москва}
+\cventry{Python-разработчик (Junior)}{Сентябрь 2026 --- настоящее время}{X5 Import, отдел логистических решений}
+\begin{cvitems}
+    \item Разрабатываю систему, обслуживающую 90\% иностранных поставок X5 Retail Group для её торговых сетей.
+\end{cvitems}
+\vspace{2pt}
+
+\cventry{Python-разработчик (стажёр)}{Апрель 2026 --- Август 2026}{X5 Tech, департамент ИИ-агентов, Москва}
 \begin{cvitems}
 %
     \item Разработал бэкенд-сервис на FastAPI и PostgreSQL (SQLAlchemy async, Alembic) для LLM-агента проверки договоров: свыше 500 проверок на проде за май--август 2026; экономический эффект для X5 Group --- 8 FTE.

@@ -6,7 +6,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
-\usepackage[left=1.5cm,right=1.5cm,top=1.0cm,bottom=1.0cm]{geometry}
+\usepackage[left=1.2cm,right=1.2cm,top=0.8cm,bottom=0.8cm]{geometry}
 \usepackage{enumitem}
 \usepackage{xcolor}
 \definecolor{linkblue}{RGB}{0,51,120}
@@ -24,10 +24,10 @@
 
 % #1 -- job title, #2 -- dates, #3 -- organization and location
 \newcommand{\cventry}[3]{%
-  \textbf{#1} \textbar{} #3 \textbar{} #2\par\vspace{2pt}}
+  \textbf{#1} \textbar{} #3 \textbar{} #2\par\vspace{1pt}}
 
 \newlist{cvitems}{itemize}{1}
-\setlist[cvitems]{label=\textbullet, leftmargin=1.2em, topsep=2pt, itemsep=1pt, parsep=0pt}
+\setlist[cvitems]{label=\textbullet, leftmargin=1.2em, topsep=2pt, itemsep=0pt, parsep=0pt}
 
 \begin{document}
 
@@ -38,26 +38,29 @@ Phone: +7 (910) 968 1153 | Email: \href{mailto:kirillkozlov.yar@gmail.com}{kiril
 GitHub: \href{https://github.com/noobmaster-ru}{github.com/noobmaster-ru} | LinkedIn: \href{https://www.linkedin.com/in/kirill1kozlov/}{linkedin.com/in/kirill1kozlov}
 
 \cvsection{Professional Summary}
-Engineer who turns business processes into deployed AI systems. At X5 Tech I took three business problems
-from problem framing to production for internal customers: an LLM contract-review agent for the legal department
-(over 500 production reviews, a legal opinion in 8--19 minutes instead of about 97, 8 FTE saved), an OCR pipeline
-for utility bills (10 FTE saved) and an OCR and LLM invoice service for the import business unit (first commit
-to a production pilot in under three months). Own the full lifecycle: FastAPI services, LangChain pipelines,
-open-source and commercial LLMs inside a closed corporate perimeter, Kubernetes, GitLab CI/CD, post-deployment
-monitoring. Master's student in Machine Learning at CMC MSU. English B2.
+Engineer who turns business processes into deployed AI systems. Since September 2026 at X5 Import (Logistics Solutions
+Department), developing the system that handles 90\% of X5 Retail Group's foreign supplies. Before that, at the X5 Tech
+AI Agents Department, took three business problems from framing to production: an LLM contract-review agent (over 500 production reviews, a legal opinion in 8--19 minutes instead of about 97, 8 FTE saved), an OCR
+pipeline for utility bills (10 FTE saved) and an OCR and LLM invoice service (first commit to a production pilot in under
+three months). Own the full lifecycle: FastAPI, LangChain, open and commercial LLMs in a closed corporate perimeter, Kubernetes, GitLab CI/CD, post-deployment monitoring. Master's student in Machine Learning at CMC MSU.
 
 \cvsection{Technical Skills}
 \textbf{Delivery:} end-to-end ownership from problem framing to production, rapid prototyping, deployment in
 private and on-premise environments, Docker, Kubernetes (K8s), Helm, GitLab CI/CD, Grafana, Git, Linux\par
 \textbf{AI and LLM:} Large Language Models (LLM), LLM agents, prompt engineering, RAG (Retrieval-Augmented
-Generation), BM25, LangChain, OpenAI API, Ollama (Llama 3.2, Qwen 2.5, Qwen3-VL), OCR (Optical Character
-Recognition), key entity extraction from business documents, A/B testing, Claude Code\par
+Generation), BM25, LangChain, OpenAI API, Ollama (Llama 3.2, Qwen 2.5, Qwen3-VL), OCR, key entity extraction from business documents, A/B testing, Claude Code\par
 \textbf{Backend:} Python, SQL, Go, C++; FastAPI, SQLAlchemy (async), Alembic, Pydantic, pytest, asyncio, httpx, aiohttp\par
 \textbf{Data:} PostgreSQL, Redis, Apache Kafka\par
 \textbf{Languages:} Russian --- Native, English --- B2
 
 \cvsection{Work Experience}
-\cventry{Machine Learning Developer}{April 2026 --- Present}{X5 Tech (X5 Group, Russia's largest grocery retailer), AI Agents Department, Moscow}
+\cventry{Python Developer (Junior)}{September 2026 --- Present}{X5 Tech (X5 Group, Russia's largest grocery retailer), Logistics Solutions Department, X5 Import, Moscow}
+\begin{cvitems}
+    \item Developing the system that handles 90\% of all foreign supplies X5 Retail Group purchases for its retail chains.
+\end{cvitems}
+\vspace{2pt}
+
+\cventry{Machine Learning Developer (Intern)}{April 2026 --- August 2026}{X5 Tech, AI Agents Department, Moscow}
 \begin{cvitems}
     \item Delivered a production LLM agent for the legal department's contract review: a multi-agent pipeline on LangChain (document processing, requisite extraction, counterparty and property checks, risk analysis, legal opinion) with contract sections analyzed in parallel. Over 500 reviews in production in May--August 2026; a legal opinion in 8--19 minutes instead of about 97 minutes of manual lawyer work; 8 FTE saved.
     \item Deployed the solution inside the corporate perimeter: open-source models (Llama 3.2, Qwen 2.5, Qwen3-VL for scanned documents) served via Ollama alongside OpenAI GPT-4o-mini; Kubernetes dev and prod via Helm charts and GitLab CI/CD; latency monitoring in Grafana.
