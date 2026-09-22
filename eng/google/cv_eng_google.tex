@@ -1,0 +1,98 @@
+% Targeted resume: Google, "Software Engineer".
+% Framing follows Google's resume guidance: one page, quantified impact in the
+% "accomplished X, measured by Y, by doing Z" form, CS fundamentals and languages
+% up front, education and projects included, no photo or personal data.
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[left=1.3cm,right=1.3cm,top=0.9cm,bottom=0.9cm]{geometry}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\definecolor{linkblue}{RGB}{0,51,120}
+\usepackage[colorlinks=true,urlcolor=linkblue,linkcolor=black,citecolor=black]{hyperref}
+
+\pagestyle{empty}
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\raggedright
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\newcommand{\cvsection}[1]{%
+  \vspace{5pt}{\large\bfseries #1}\par\vspace{2pt}\hrule\vspace{3pt}}
+
+% #1 -- job title, #2 -- dates, #3 -- organization and location
+\newcommand{\cventry}[3]{%
+  \textbf{#1} \textbar{} #3 \textbar{} #2\par\vspace{1pt}}
+
+\newlist{cvitems}{itemize}{1}
+\setlist[cvitems]{label=\textbullet, leftmargin=1.2em, topsep=2pt, itemsep=0pt, parsep=0pt}
+
+\begin{document}
+
+{\LARGE\bfseries Kirill Kozlov}\par\vspace{3pt}
+Software Engineer (Backend, Distributed Services, Applied AI)\par\vspace{3pt}
+Moscow, Russia (GMT+3), open to relocation\par
+Phone: +7 (910) 968 1153 | Email: \href{mailto:kirillkozlov.yar@gmail.com}{kirillkozlov.yar@gmail.com}\par
+GitHub: \href{https://github.com/noobmaster-ru}{github.com/noobmaster-ru} | LinkedIn: \href{https://www.linkedin.com/in/kirill1kozlov/}{linkedin.com/in/kirill1kozlov}
+
+\cvsection{Summary}
+Software engineer with a CS bachelor's degree from CMC MSU and production experience at X5 Group, Russia's largest
+grocery retailer. Built and operate backend services in Python (FastAPI, PostgreSQL, Apache Kafka) on Kubernetes,
+including an LLM-based contract-review system with over 500 production runs and 8 FTE saved. Currently developing the
+logistics system that handles 90\% of X5 Retail Group's foreign supplies. Comfortable with Python, C++, Go and SQL.
+
+\cvsection{Technical Skills}
+\textbf{Programming languages:} Python, C++, Go, SQL, TypeScript\par
+\textbf{Fundamentals:} data structures and algorithms, system design, REST API design, asynchronous programming,
+relational data modeling, testing (pytest), code review\par
+\textbf{Backend and infrastructure:} FastAPI, SQLAlchemy (async), Alembic, Pydantic, asyncio, httpx, PostgreSQL, Redis,
+Apache Kafka, Docker, Kubernetes (K8s), Helm, GitLab CI/CD, Grafana, Linux, Git\par
+\textbf{Applied AI:} Large Language Models (LLM), agentic workflows, RAG, prompt engineering, LangChain, OpenAI API,
+OCR (Optical Character Recognition), A/B testing, PyTorch\par
+\textbf{Frontend:} React, TypeScript\par
+\textbf{Spoken languages:} Russian --- Native, English --- B2
+
+\cvsection{Work Experience}
+\cventry{Software Engineer (Junior)}{September 2026 --- Present}{X5 Tech (X5 Group, Russia's largest grocery retailer), Logistics Solutions Department, X5 Import, Moscow}
+\begin{cvitems}
+    \item Developing the system that handles 90\% of all foreign supplies X5 Retail Group purchases for its retail chains.
+\end{cvitems}
+\vspace{2pt}
+\cventry{Software Engineer (Intern)}{September 2025 --- August 2026}{X5 Tech, AI Agents Department, Moscow}
+\begin{cvitems}
+    \item Cut legal opinion preparation time from about 97 minutes to 8--19 minutes (8 FTE saved for X5 Group) by building an agentic LLM contract-review system end to end: FastAPI and PostgreSQL backend, React and TypeScript frontend, multi-agent LangChain pipeline (document processing, requisite extraction, counterparty and property checks, risk analysis, legal opinion) with contract sections analyzed in parallel; over 500 reviews in production in May--August 2026.
+    \item Kept minute-long OCR and LLM calls reliable in production by adding per-request budgets and timeouts, per-agent latency metrics in Grafana, and Kubernetes dev and prod environments deployed via Helm and GitLab CI/CD.
+    \item Grounded legal analysis in Russian legislation by building a RAG source over 40 federal laws (366 articles, BM25 index) with relevant articles injected into agent prompts.
+    \item Shipped an OCR and LLM service that reads foreign invoices for the X5 Import business unit: from first commit in June 2026 to dev and prod deployment and a pilot in August 2026.
+    \item Saved 10 FTE on utility-bill processing across X5 Group premises by developing the FastAPI backend that consumes OCR results from Apache Kafka, stores them and serves them to the frontend.
+\end{cvitems}
+
+\cvsection{Projects}
+\cventry{AxiomAI (LLM-powered Telegram bot)}{October 2025 --- April 2026}{\href{https://github.com/noobmaster-ru/axiomai}{github.com/noobmaster-ru/axiomai}}
+\begin{cvitems}
+    \item Reduced manager workload by 80\% for a business's customer communications by building and deploying an aiogram bot on the OpenAI API with PostgreSQL, Redis and Docker.
+\end{cvitems}
+\vspace{2pt}
+\cventry{WB Parser (Telegram Mini App)}{July 2025 --- September 2025}{\href{https://github.com/noobmaster-ru/tg-mini-app-backend}{github.com/noobmaster-ru/tg-mini-app-backend}}
+\begin{cvitems}
+    \item Reached 220 active users by shipping a Wildberries search-results parser as a Telegram Mini App with frontend, backend and database.
+\end{cvitems}
+\vspace{2pt}
+\cventry{Placa (Google Sheets analytics)}{July 2024 --- December 2024}{\href{https://github.com/noobmaster-ru/wb_tables}{github.com/noobmaster-ru/wb\_tables}}
+\begin{cvitems}
+    \item Delivered daily advertising-spend data to about 300 Wildberries sellers by building a self-service Google Apps Script template with Wildberries API integration and automated daily loads.
+\end{cvitems}
+
+\cvsection{Education}
+\cventry{Lomonosov Moscow State University, Master's degree in Machine Learning}{September 2026 --- Present}{Faculty of Computational Mathematics and Cybernetics (CMC), Dept. of Mathematical Methods of Forecasting}
+\vspace{2pt}
+\cventry{Lomonosov Moscow State University, Bachelor's degree in Computer Science}{August 2022 --- August 2026}{Faculty of Computational Mathematics and Cybernetics (CMC)}
+\begin{cvitems}
+    \item Deep Learning School (DLS), Computer Vision and NLP tracks --- MIPT School of Deep Learning.
+    \item Summer School on A/B Testing, X5 Tech --- Summer 2026.
+\end{cvitems}
+
+\end{document}

@@ -1,6 +1,6 @@
 # Структура: <язык>/<вариант>/<исходник>.tex -> PDF с именем «Фамилия_Имя_Должность» в той же папке.
 #   ru/  backend/ ml/ fd/      русские версии
-#   eng/ backend/ ml/ fd/      английские версии (в eng/ml/ также адресная версия под Plata)
+#   eng/ backend/ ml/ fd/ google/  английские версии (в eng/ml/ также адресная версия под Plata, в eng/google/ адресная под Google)
 # Имя PDF задаётся через -jobname, поэтому в папке один исходник и один готовый к отправке файл.
 
 LATEX = pdflatex -interaction=nonstopmode -halt-on-error
@@ -12,7 +12,8 @@ PDFS = ru/backend/Козлов_Кирилл_Python-разработчик.pdf \
        eng/backend/Kirill_Kozlov_Software_Engineer.pdf \
        eng/ml/Kirill_Kozlov_Machine_Learning_Developer.pdf \
        eng/ml/Kirill_Kozlov_AI_Engineer_Plata.pdf \
-       eng/fd/Kirill_Kozlov_Forward_Deployed_Engineer.pdf
+       eng/fd/Kirill_Kozlov_Forward_Deployed_Engineer.pdf \
+       eng/google/Kirill_Kozlov_Software_Engineer.pdf
 
 all: $(PDFS)
 
@@ -44,6 +45,9 @@ eng/ml/Kirill_Kozlov_AI_Engineer_Plata.pdf: eng/ml/cv_eng_plata.tex
 
 eng/fd/Kirill_Kozlov_Forward_Deployed_Engineer.pdf: eng/fd/cv_eng_fde.tex
 	$(call build,eng/fd,cv_eng_fde.tex,Kirill_Kozlov_Forward_Deployed_Engineer)
+
+eng/google/Kirill_Kozlov_Software_Engineer.pdf: eng/google/cv_eng_google.tex
+	$(call build,eng/google,cv_eng_google.tex,Kirill_Kozlov_Software_Engineer)
 
 tex: all
 

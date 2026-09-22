@@ -15,6 +15,7 @@ eng/                                         английские версии
   ml/       cv_eng_ml.tex       -> Kirill_Kozlov_Machine_Learning_Developer.pdf
             cv_eng_plata.tex    -> Kirill_Kozlov_AI_Engineer_Plata.pdf   (адресная: Plata, AI Engineer Middle/Middle+)
   fd/       cv_eng_fde.tex      -> Kirill_Kozlov_Forward_Deployed_Engineer.pdf
+  google/   cv_eng_google.tex   -> Kirill_Kozlov_Software_Engineer.pdf   (адресная: Google, Software Engineer)
 ```
 
 Каждый `.tex` самостоятелен. Имя PDF задаётся в Makefile через `-jobname`.
