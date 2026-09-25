@@ -6,3 +6,4 @@
 *.fls
 *.synctex(busy)
 *.fdb_latexmk
+.claude/
