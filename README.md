@@ -18,4 +18,6 @@ eng/                                         английские версии
   google/   cv_eng_google.tex   -> Kirill_Kozlov_Software_Engineer.pdf   (адресная: Google, Software Engineer)
 ```
 
+`certificates/` — копии сертификатов. В резюме ссылки на сертификат ведут на Яндекс Диск (русские версии) и Google Drive (английские версии).
+
 Каждый `.tex` самостоятелен. Имя PDF задаётся в Makefile через `-jobname`.

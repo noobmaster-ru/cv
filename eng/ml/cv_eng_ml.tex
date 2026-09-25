@@ -6,7 +6,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
-\usepackage[left=1.5cm,right=1.5cm,top=1.3cm,bottom=1.3cm]{geometry}
+\usepackage[left=1.2cm,right=1.2cm,top=0.8cm,bottom=0.8cm]{geometry}
 \usepackage{enumitem}
 \usepackage{xcolor}
 \definecolor{linkblue}{RGB}{0,51,120}
@@ -20,14 +20,14 @@
 \setlength{\parskip}{0pt}
 
 \newcommand{\cvsection}[1]{%
-  \vspace{7pt}{\large\bfseries #1}\par\vspace{2pt}\hrule\vspace{4pt}}
+  \vspace{5pt}{\large\bfseries #1}\par\vspace{2pt}\hrule\vspace{4pt}}
 
 % #1 -- job title, #2 -- dates, #3 -- organization and location
 \newcommand{\cventry}[3]{%
-  \textbf{#1} \textbar{} #3 \textbar{} #2\par\vspace{2pt}}
+  \textbf{#1} \textbar{} #3 \textbar{} #2\par\vspace{1pt}}
 
 \newlist{cvitems}{itemize}{1}
-\setlist[cvitems]{label=\textbullet, leftmargin=1.2em, topsep=2pt, itemsep=1pt, parsep=0pt}
+\setlist[cvitems]{label=\textbullet, leftmargin=1.2em, topsep=2pt, itemsep=0pt, parsep=0pt}
 
 % --- Skill blocks (order depends on the variant) ---
 \newcommand{\skilllangs}{\textbf{Programming Languages:} Python, SQL, Go, C++\par}
@@ -43,7 +43,7 @@ OCR (Optical Character Recognition), A/B testing, PyTorch, Claude Code\par}
 \begin{document}
 
 {\LARGE\bfseries Kirill Kozlov}\par\vspace{3pt}
-Mid-level Machine Learning Developer (Python, LLM, RAG)\par\vspace{3pt}
+Junior Machine Learning Developer (Python, LLM, RAG)\par\vspace{3pt}
 Moscow, Russia | Phone: +7 (910) 968 1153 | Email: \href{mailto:kirillkozlov.yar@gmail.com}{kirillkozlov.yar@gmail.com}\par
 GitHub: \href{https://github.com/noobmaster-ru}{github.com/noobmaster-ru} | LinkedIn: \href{https://www.linkedin.com/in/kirill1kozlov/}{linkedin.com/in/kirill1kozlov} | Telegram: \href{https://t.me/noobmaster_rus}{@noobmaster\_rus}
 
@@ -51,7 +51,8 @@ GitHub: \href{https://github.com/noobmaster-ru}{github.com/noobmaster-ru} | Link
 %
 Machine Learning developer with a Bachelor's degree from the Faculty of Computational Mathematics and
 Cybernetics (CMC) at Lomonosov Moscow State University, currently a Master's student in Machine Learning
-at the same faculty. At X5 Tech built an LLM agent for contract review: over 500 production reviews in four
+at the same faculty. Since September 2026 at X5 Import (Logistics Solutions Department) developing the system that
+handles 90\% of X5 Retail Group's foreign supplies; before that, at the X5 Tech AI Agents Department, built an LLM agent for contract review: over 500 production reviews in four
 months, a legal opinion in 8--19 minutes instead of about 97 minutes of manual lawyer work, business impact of 8 FTE.
 Core skills: Python, LLM and RAG (LangChain, BM25), FastAPI, PostgreSQL, Kubernetes.%
 
@@ -62,7 +63,13 @@ Core skills: Python, LLM and RAG (LangChain, BM25), FastAPI, PostgreSQL, Kuberne
 \skillhuman
 
 \cvsection{Work Experience}
-\cventry{Machine Learning Developer}{April 2026 --- Present}{X5 Tech (X5 Group, Russia's largest grocery retailer), AI Agents Department, Moscow}
+\cventry{Software Engineer (Junior)}{September 2026 --- Present}{X5 Tech (X5 Group, Russia's largest grocery retailer), Logistics Solutions Department, X5 Import, Moscow}
+\begin{cvitems}
+    \item Developing the system that handles 90\% of all foreign supplies X5 Retail Group purchases for its retail chains.
+\end{cvitems}
+\vspace{2pt}
+
+\cventry{Machine Learning Developer (Intern)}{April 2026 --- August 2026}{X5 Tech, AI Agents Department, Moscow}
 \begin{cvitems}
 %
     \item Built an LLM agent on LangChain for contract review: over 500 production reviews in May--August 2026, a legal opinion in 8--19 minutes instead of about 97 minutes of manual lawyer work; business impact of 8 FTE for X5 Group.
@@ -101,7 +108,7 @@ Core skills: Python, LLM and RAG (LangChain, BM25), FastAPI, PostgreSQL, Kuberne
 \cventry{Lomonosov Moscow State University, Bachelor's degree}{August 2022 --- August 2026}{Faculty of Computational Mathematics and Cybernetics, Moscow}
 \begin{cvitems}
     \item Deep Learning School (DLS), Computer Vision and NLP tracks --- MIPT School of Deep Learning.
-    \item Summer School on A/B Testing, X5 Tech --- Summer 2026.
+    \item Summer School on A/B Testing, X5 Tech --- Summer 2026 (\href{https://drive.google.com/file/d/1mUnPwkYkO6VxMJelwePo0Ie6PKA6IBot/view?usp=sharing}{certificate no. 9074503}).
 \end{cvitems}
 
 \end{document}

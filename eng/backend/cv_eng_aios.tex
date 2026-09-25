@@ -7,7 +7,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
-\usepackage[left=1.5cm,right=1.5cm,top=1.0cm,bottom=1.0cm]{geometry}
+\usepackage[left=1.2cm,right=1.2cm,top=0.8cm,bottom=0.8cm]{geometry}
 \usepackage{enumitem}
 \usepackage{xcolor}
 \definecolor{linkblue}{RGB}{0,51,120}
@@ -25,10 +25,10 @@
 
 % #1 -- job title, #2 -- dates, #3 -- organization and location
 \newcommand{\cventry}[3]{%
-  \textbf{#1} \textbar{} #3 \textbar{} #2\par\vspace{2pt}}
+  \textbf{#1} \textbar{} #3 \textbar{} #2\par\vspace{1pt}}
 
 \newlist{cvitems}{itemize}{1}
-\setlist[cvitems]{label=\textbullet, leftmargin=1.2em, topsep=2pt, itemsep=1pt, parsep=0pt}
+\setlist[cvitems]{label=\textbullet, leftmargin=1.2em, topsep=2pt, itemsep=0pt, parsep=0pt}
 
 \begin{document}
 
@@ -39,9 +39,10 @@ Phone: +7 (910) 968 1153 | Email: \href{mailto:kirillkozlov.yar@gmail.com}{kiril
 GitHub: \href{https://github.com/noobmaster-ru}{github.com/noobmaster-ru} | LinkedIn: \href{https://www.linkedin.com/in/kirill1kozlov/}{linkedin.com/in/kirill1kozlov}
 
 \cvsection{Professional Summary}
-Software engineer who ships products used by real customers and follows them into production. At X5 Tech
-I built an agentic LLM workflow for contract review end to end (Python and FastAPI backend, React and TypeScript
-frontend, PostgreSQL, Kubernetes) and own it in production: over 500 reviews, a legal opinion in 8--19 minutes
+Software engineer who ships products used by real customers and follows them into production. Since September 2026 at X5 Import
+(Logistics Solutions Department), developing the system that handles 90\% of X5 Retail Group's foreign supplies. Before
+that, at the X5 Tech AI Agents Department, I built an agentic LLM workflow for contract review end to end (Python and FastAPI backend, React and TypeScript
+frontend, PostgreSQL, Kubernetes) and owned it in production: over 500 reviews, a legal opinion in 8--19 minutes
 instead of about 97, 8 FTE saved. Before that I shipped three products on my own: Google Sheets analytics used
 daily by about 300 sellers, a Telegram Mini App with 220 active users, and an OpenAI-powered bot that cut
 manager workload by 80\%. I use Claude Code daily as a force multiplier and stay accountable for the result.
@@ -60,10 +61,16 @@ OCR (Optical Character Recognition)\par
 \textbf{Spoken languages:} Russian --- Native, English --- B2
 
 \cvsection{Work Experience}
-\cventry{Machine Learning Developer}{April 2026 --- Present}{X5 Tech (X5 Group, Russia's largest grocery retailer), AI Agents Department, Moscow}
+\cventry{Software Engineer (Junior)}{September 2026 --- Present}{X5 Tech (X5 Group, Russia's largest grocery retailer), Logistics Solutions Department, X5 Import, Moscow}
 \begin{cvitems}
-    \item Built an agentic LLM workflow for contract review end to end: FastAPI and PostgreSQL backend, React and TypeScript frontend, multi-agent pipeline on LangChain (document processing, requisite extraction, counterparty and property checks, risk analysis, legal opinion). Shipped to production and own it there: over 500 reviews in May--August 2026, a legal opinion in 8--19 minutes instead of about 97 minutes of manual lawyer work, 8 FTE saved.
-    \item Own production: Kubernetes dev and prod via Helm and GitLab CI/CD, per-agent latency metrics in Grafana, request budgets and timeouts for minute-long OCR and LLM calls.
+    \item Developing the system that handles 90\% of all foreign supplies X5 Retail Group purchases for its retail chains.
+\end{cvitems}
+\vspace{2pt}
+
+\cventry{Machine Learning Developer (Intern)}{April 2026 --- August 2026}{X5 Tech, AI Agents Department, Moscow}
+\begin{cvitems}
+    \item Built an agentic LLM workflow for contract review end to end: FastAPI and PostgreSQL backend, React and TypeScript frontend, multi-agent pipeline on LangChain (document processing, requisite extraction, counterparty and property checks, risk analysis, legal opinion). Shipped to production and owned it there: over 500 reviews in May--August 2026, a legal opinion in 8--19 minutes instead of about 97 minutes of manual lawyer work, 8 FTE saved.
+    \item Owned production: Kubernetes dev and prod via Helm and GitLab CI/CD, per-agent latency metrics in Grafana, request budgets and timeouts for minute-long OCR and LLM calls.
     \item Shipped an OCR and LLM service that reads foreign invoices for the X5 Import business unit: from first commit in June 2026 to dev and prod deployment and a pilot in August 2026.
     \item Developed the FastAPI backend for utility-bill processing: OCR results consumed from Apache Kafka, stored and served to the frontend; 10 FTE saved.
 \end{cvitems}
@@ -89,7 +96,7 @@ OCR (Optical Character Recognition)\par
 \vspace{2pt}
 \cventry{Lomonosov Moscow State University, Master's degree}{September 2026 --- Present}{Faculty of Computational Mathematics and Cybernetics (CMC), Machine Learning}
 \begin{cvitems}
-    \item Summer School on A/B Testing, X5 Tech --- Summer 2026.
+    \item Summer School on A/B Testing, X5 Tech --- Summer 2026 (\href{https://drive.google.com/file/d/1mUnPwkYkO6VxMJelwePo0Ie6PKA6IBot/view?usp=sharing}{certificate no. 9074503}).
     \item Deep Learning School (DLS), Computer Vision and NLP tracks --- MIPT School of Deep Learning.
 \end{cvitems}
 
