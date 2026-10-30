@@ -13,7 +13,8 @@ PDFS = ru/backend/Козлов_Кирилл_Python-разработчик.pdf \
        eng/ml/Kirill_Kozlov_Machine_Learning_Developer.pdf \
        eng/ml/Kirill_Kozlov_AI_Engineer_Plata.pdf \
        eng/fd/Kirill_Kozlov_Forward_Deployed_Engineer.pdf \
-       eng/google/Kirill_Kozlov_Software_Engineer.pdf
+       eng/google/Kirill_Kozlov_Software_Engineer.pdf \
+       eng/citadel/Kirill_Kozlov_Software_Engineer.pdf
 
 all: $(PDFS)
 
@@ -48,6 +49,9 @@ eng/fd/Kirill_Kozlov_Forward_Deployed_Engineer.pdf: eng/fd/cv_eng_fde.tex
 
 eng/google/Kirill_Kozlov_Software_Engineer.pdf: eng/google/cv_eng_google.tex
 	$(call build,eng/google,cv_eng_google.tex,Kirill_Kozlov_Software_Engineer)
+
+eng/citadel/Kirill_Kozlov_Software_Engineer.pdf: eng/citadel/cv_eng_citadel.tex
+	$(call build,eng/citadel,cv_eng_citadel.tex,Kirill_Kozlov_Software_Engineer)
 
 tex: all
 

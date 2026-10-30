@@ -1,0 +1,80 @@
+% Targeted resume: Citadel Securities, Software Engineer Intern (Europe).
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[left=1.3cm,right=1.3cm,top=0.9cm,bottom=0.9cm]{geometry}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\definecolor{linkblue}{RGB}{0,51,120}
+\usepackage[colorlinks=true,urlcolor=linkblue,linkcolor=black,citecolor=black]{hyperref}
+
+\pagestyle{empty}
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+\raggedright
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+\newcommand{\cvsection}[1]{%
+  \vspace{5pt}{\large\bfseries #1}\par\vspace{2pt}\hrule\vspace{3pt}}
+
+% #1 -- job title, #2 -- dates, #3 -- organization and location
+\newcommand{\cventry}[3]{%
+  \textbf{#1} \textbar{} #3 \textbar{} #2\par\vspace{1pt}}
+
+\newlist{cvitems}{itemize}{1}
+\setlist[cvitems]{label=\textbullet, leftmargin=1.2em, topsep=2pt, itemsep=0pt, parsep=0pt}
+
+\begin{document}
+{\LARGE\bfseries Kirill Kozlov}\par\vspace{3pt}
+Software Engineer | Python, C++, Backend Systems\par\vspace{3pt}
+Moscow, Russia | Open to relocation\par
+Phone: +7 (910) 968 1153 | Email: \href{mailto:kirillkozlov.yar@gmail.com}{kirillkozlov.yar@gmail.com}\par
+GitHub: \href{https://github.com/noobmaster-ru}{github.com/noobmaster-ru}
+
+\cvsection{Education}
+\cventry{Lomonosov Moscow State University, Master's degree in Machine Learning}{September 2026 --- Expected 2028}{Faculty of Computational Mathematics and Cybernetics (CMC), Department of Mathematical Methods of Forecasting}
+\vspace{2pt}
+\cventry{Lomonosov Moscow State University, Bachelor's degree in Computer Science}{August 2022 --- August 2026}{Faculty of Computational Mathematics and Cybernetics (CMC); GPA: 3.9/4.0}
+\begin{cvitems}
+    \item Additional training: Deep Learning School, MIPT (Computer Vision and NLP); X5 Tech Summer School on A/B Testing, 2026.
+\end{cvitems}
+
+\cvsection{Work Experience}
+\cventry{Software Engineer (Junior)}{October 2026 --- Present}{X5 Tech, Logistics Solutions Department, Moscow}
+\begin{cvitems}
+    \item Developing the logistics system that handles 90\% of X5 Retail Group's foreign supplies for its retail chains.
+\end{cvitems}
+\vspace{2pt}
+\cventry{Software Engineer (Intern)}{April 2026 --- October 2026}{X5 Tech, AI Agents Department, Moscow}
+\begin{cvitems}
+    \item Built and deployed a Python/FastAPI contract-review service with PostgreSQL and parallel document analysis; processed over 500 production reviews in May--August 2026 and reduced legal-opinion preparation time from approximately 97 minutes to 8--19 minutes.
+    \item Implemented per-request execution budgets and timeouts for long-running OCR and LLM calls, with per-agent latency monitoring in Grafana.
+    \item Developed a FastAPI backend for utility-bill processing: consumed OCR results from Apache Kafka, stored processed data, and exposed it to the frontend; business impact equivalent to 10 FTE.
+    \item Shipped an OCR and LLM service for foreign invoice analysis: from first commit in June 2026 to development and production deployments and a pilot in August 2026.
+    \item Deployed services to development and production Kubernetes environments using Docker, Helm, and GitLab CI/CD.
+\end{cvitems}
+
+\cvsection{Technical Skills}
+\textbf{Programming:} Python, C++, SQL, Go\par
+\textbf{C++:} STL containers, algorithms and iterators; object-oriented programming; pointers and references; RAII and smart pointers; templates; move semantics\par
+\textbf{Computer science and engineering:} data structures and algorithms, asynchronous programming, REST API design, relational data modeling, testing (pytest), code review\par
+\textbf{Backend and data:} FastAPI, asyncio, SQLAlchemy, Alembic, PostgreSQL, Redis, Apache Kafka\par
+\textbf{Infrastructure:} Linux, Docker, Kubernetes, Helm, GitLab CI/CD, Grafana, Git\par
+\textbf{Applied AI:} LangChain, LLM workflows, RAG, BM25, OCR, OpenAI API\par
+\textbf{Spoken languages:} Russian --- Native; English --- B2
+
+\cvsection{Projects}
+\cventry{\href{https://github.com/noobmaster-ru/korzina-market}{Korzina} --- Marketplace and AI Product Search}{September 2026 --- Present}{TypeScript, Node.js, PostgreSQL, React}
+\begin{cvitems}
+    \item Building a Telegram Mini App and bot with a catalog of 100,000+ products; automated supplier-data ingestion, normalization, and deduplication.
+    \item Implemented PostgreSQL full-text and trigram search; developing a hybrid retrieval prototype combining multimodal Gemini embeddings, pgvector, reciprocal rank fusion (RRF), and Qwen reranking.
+    \item Implemented LLM/VLM attribute extraction and product-compatibility checks in the prototype, with versioned embedding caches, concurrent-request deduplication, and incremental refresh.
+    \item Built offline relevance evaluation with frozen datasets, qrels, Recall@20, and Precision@5; compared text and multimodal retrieval under model-cost and latency constraints.
+    \item Built the Fastify API and background jobs; deployed the service using PostgreSQL, Valkey, S3, Docker, and GitLab CI/CD.
+\end{cvitems}
+\textbf{Other projects:} \href{https://github.com/noobmaster-ru/axiomai}{AxiomAI}: LLM-powered Telegram bot, 80\% reduction in manager workload; WB Parser: C++ parser and Telegram Mini App, 220 active users; \href{https://github.com/noobmaster-ru/wb_tables}{Placa}: analytics for 300 sellers.\par
+
+\end{document}

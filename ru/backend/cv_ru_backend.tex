@@ -45,17 +45,10 @@ RAG (Retrieval-Augmented Generation), BM25, OpenAI API, LangChain, промпт-
 {\LARGE\bfseries Кирилл Козлов}\par\vspace{3pt}
 Junior Python-разработчик (FastAPI, PostgreSQL, Kubernetes)\par\vspace{3pt}
 Москва, Россия | Телефон: +7 (910) 968 1153 | Email: \href{mailto:kirillandreevickozlov@yandex.ru}{kirillandreevickozlov@yandex.ru}\par
-GitHub: \href{https://github.com/noobmaster-ru}{github.com/noobmaster-ru} | LinkedIn: \href{https://www.linkedin.com/in/kirill1kozlov/}{linkedin.com/in/kirill1kozlov} | Telegram: \href{https://t.me/noobmaster_rus}{@noobmaster\_rus}
+GitHub: \href{https://github.com/noobmaster-ru}{github.com/noobmaster-ru} | Telegram: \href{https://t.me/noobmaster_rus}{@noobmaster\_rus}
 
 \cvsection{О себе}
-%
-Python-разработчик, бакалавр ВМК МГУ, учусь в магистратуре ВМК МГУ по машинному обучению.
-С сентября 2026 в X5 Import (отдел логистических решений) разрабатываю систему для 90\% иностранных поставок
-X5 Retail Group; до этого в департаменте ИИ-агентов X5 Tech разработал три бэкенд-сервиса на FastAPI и развернул их в Kubernetes: LLM-агент для проверки
-договоров (свыше 500 проверок на проде, эффект 8 FTE), обработка коммунальных платежей (эффект 10 FTE),
-анализ иностранных инвойсов. Ключевые навыки: Python, FastAPI, PostgreSQL (SQLAlchemy, Alembic),
-Apache Kafka, Docker и Kubernetes, GitLab CI/CD.%
-
+Разработчик, бакалавр ВМК МГУ и магистрант по машинному обучению. В X5 Tech разрабатывал и запускал Python-сервисы на FastAPI, PostgreSQL и Kubernetes. В проекте «Корзина» разрабатываю ИИ-поиск товаров и систему обработки каталога.
 
 \cvsection{Ключевые навыки}
 \skilllangs
@@ -63,44 +56,33 @@ Apache Kafka, Docker и Kubernetes, GitLab CI/CD.%
 \skillhuman
 
 \cvsection{Опыт работы}
-\cventry{Python-разработчик (Junior)}{Сентябрь 2026 --- настоящее время}{X5 Import, отдел логистических решений}
+\cventry{Python-разработчик (Junior)}{Октябрь 2026 --- настоящее время}{X5 Tech, отдел логистических решений}
 \begin{cvitems}
     \item Разрабатываю систему, обслуживающую 90\% иностранных поставок X5 Retail Group для её торговых сетей.
 \end{cvitems}
 \vspace{2pt}
 
-\cventry{Python-разработчик (стажёр)}{Апрель 2026 --- Август 2026}{X5 Tech, департамент ИИ-агентов, Москва}
+\cventry{Python-разработчик (стажёр)}{Апрель 2026 --- Октябрь 2026}{X5 Tech, департамент ИИ-агентов, Москва}
 \begin{cvitems}
 %
     \item Разработал бэкенд-сервис на FastAPI и PostgreSQL (SQLAlchemy async, Alembic) для LLM-агента проверки договоров: свыше 500 проверок на проде за май--август 2026; экономический эффект для X5 Group --- 8 FTE.
     \item Сократил время подготовки юридического заключения до 8--19 минут против около 97 минут ручной работы юриста.
     \item Разработал бэкенд на FastAPI для сервиса обработки коммунальных платежей: приём результатов OCR из Apache Kafka, хранение и выдача во фронтенд; экономический эффект --- 10 FTE.
-    \item Разработал и развернул на dev и prod stateless REST API для анализа иностранных инвойсов (OCR и LLM) для бизнес-единицы X5 Import; с августа 2026 в пилотной эксплуатации.
+    \item Разработал и развернул на dev и prod stateless REST API для анализа иностранных инвойсов (OCR и LLM) для X5 Tech; с августа 2026 в пилотной эксплуатации.
     \item Развернул сервисы в кластере Kubernetes (dev и prod): Helm-чарты, сборка и деплой образов в GitLab CI/CD, метрики латентности в Grafana.%
 
 \end{cvitems}
 
 \cvsection{Проекты}
-\cventry{Python-разработчик, AxiomAI}{Октябрь 2025 --- Апрель 2026}{\href{https://github.com/noobmaster-ru/axiomai}{github.com/noobmaster-ru/axiomai}}
+\cventry{\href{https://github.com/noobmaster-ru/korzina-market}{Корзина} --- маркетплейс и ИИ-поиск товаров}{Сентябрь 2026 --- настоящее время}{TypeScript, Node.js, PostgreSQL, React}
 \begin{cvitems}
-    \item Разработал и развернул Telegram-бота на aiogram с использованием OpenAI API, PostgreSQL, Redis и Docker.
-    \item Снизил нагрузку на менеджеров на 80\% и повысил скорость ответов в бизнес-коммуникациях.
+    \item Разрабатываю Telegram Mini App и бота с каталогом более 100 тыс. товаров; автоматизировал сбор, нормализацию и дедупликацию данных поставщиков.
+    \item Реализовал полнотекстовый и триграммный поиск в PostgreSQL; разрабатываю прототип гибридного поиска: мультимодальные эмбеддинги Gemini, pgvector, объединение текстовых и визуальных кандидатов через RRF, реранжирование Qwen.
+    \item В прототипе реализовал извлечение характеристик через LLM/VLM и проверку совместимости товаров; версионируемый кэш эмбеддингов, защиту от параллельных повторов и обновление изменённых карточек.
+    \item Подготовил офлайн-оценку релевантности: фиксированные датасеты, qrels, Recall@20 и Precision@5; сравнение текстового и мультимодального поиска с учётом задержек и стоимости моделей.
+    \item Реализовал Fastify API и фоновые задачи; PostgreSQL, Valkey, S3, Docker и GitLab CI/CD для развёртывания и эксплуатации сервиса.
 \end{cvitems}
-\vspace{4pt}
-
-\cventry{Python-разработчик, WB Parser (Telegram Mini App)}{Июль 2025 --- Сентябрь 2025}{\href{https://github.com/noobmaster-ru/tg-mini-app-backend}{github.com/noobmaster-ru/tg-mini-app-backend}}
-\begin{cvitems}
-    \item Разработал парсер поисковой выдачи Wildberries с фильтрацией по органической позиции товара.
-    \item Упаковал продукт в Telegram Mini App с бэкендом и базой данных; привлёк 220 активных пользователей.
-\end{cvitems}
-\vspace{4pt}
-
-\cventry{Python-разработчик, Placa}{Июль 2024 --- Декабрь 2024}{\href{https://github.com/noobmaster-ru/wb_tables}{github.com/noobmaster-ru/wb\_tables}}
-\begin{cvitems}
-    \item Разработал сервис аналитики в Google Sheets для продавцов Wildberries на Google Apps Script с интеграцией Wildberries API.
-    \item Автоматизировал ежедневную загрузку данных: копирование шаблона таблицы, ввод API-токена, запуск с панели управления.
-    \item Обеспечил около 300 продавцов ежедневными данными о рекламных расходах.
-\end{cvitems}
+\textbf{Другие проекты:} \href{https://github.com/noobmaster-ru/axiomai}{AxiomAI} --- Telegram-бот на LLM, снижение нагрузки на менеджеров на 80\%; \href{https://github.com/noobmaster-ru/tg-mini-app-backend}{WB Parser} --- поиск Wildberries и Mini App, 220 пользователей; \href{https://github.com/noobmaster-ru/wb_tables}{Placa} --- аналитика для 300 продавцов.\par
 
 \cvsection{Образование}
 \cventry{МГУ имени М.В. Ломоносова, магистратура}{Сентябрь 2026 --- настоящее время}{Факультет ВМК, кафедра математических методов прогнозирования (ММП), машинное обучение, Москва}

@@ -35,17 +35,10 @@
 Junior AI Engineer (LLM, RAG, OCR, Python)\par\vspace{3pt}
 Moscow, Russia (GMT+3), open to remote work and relocation\par
 Phone: +7 (910) 968 1153 | Email: \href{mailto:kirillkozlov.yar@gmail.com}{kirillkozlov.yar@gmail.com} | Telegram: \href{https://t.me/noobmaster_rus}{@noobmaster\_rus}\par
-GitHub: \href{https://github.com/noobmaster-ru}{github.com/noobmaster-ru} | LinkedIn: \href{https://www.linkedin.com/in/kirill1kozlov/}{linkedin.com/in/kirill1kozlov}
+GitHub: \href{https://github.com/noobmaster-ru}{github.com/noobmaster-ru}
 
 \cvsection{Professional Summary}
-AI Engineer with hands-on LLM experience in production. Since September 2026 at X5 Import (Logistics Solutions
-Department), developing the system that handles 90\% of X5 Retail Group's foreign supplies. Before that, at the X5 Tech
-AI Agents Department, I built and shipped a business-critical
-multi-agent LLM pipeline for contract review (LangChain, prompt engineering, model selection across OpenAI and
-open-source models via Ollama, a RAG-oriented data source over Russian legislation): over 500 production reviews,
-a legal opinion in 8--19 minutes instead of about 97, 8 FTE saved. Built OCR and LLM services that read, analyze and
-validate business documents. Own the lifecycle end to end, from technical design to CI/CD and monitoring.
-Master's student in Machine Learning at CMC MSU.
+Software engineer and Machine Learning master's student at CMC MSU with production experience at X5 Tech. Built Python services using FastAPI, PostgreSQL, and Kubernetes; developing AI product search and catalog-processing pipelines for Korzina.
 
 \cvsection{Technical Skills}
 \textbf{LLM and RAG:} Large Language Models (LLM), prompt engineering, ML pipelines, LLM agents, model selection
@@ -60,41 +53,38 @@ key entity extraction and attribute validation from business documents, PyMuPDF,
 \textbf{Languages:} Russian --- Native, English --- B2
 
 \cvsection{Work Experience}
-\cventry{Software Engineer (Junior)}{September 2026 --- Present}{X5 Tech (X5 Group, Russia's largest grocery retailer), Logistics Solutions Department, X5 Import, Moscow}
+\cventry{Software Engineer (Junior)}{October 2026 --- Present}{X5 Tech (X5 Group, Russia's largest grocery retailer), Logistics Solutions Department, Moscow}
 \begin{cvitems}
     \item Developing the system that handles 90\% of all foreign supplies X5 Retail Group purchases for its retail chains.
 \end{cvitems}
 \vspace{2pt}
 
-\cventry{Machine Learning Developer (Intern)}{April 2026 --- August 2026}{X5 Tech, AI Agents Department, Moscow}
+\cventry{Machine Learning Developer (Intern)}{April 2026 --- October 2026}{X5 Tech, AI Agents Department, Moscow}
 \begin{cvitems}
-    \item Built and shipped a business-critical LLM pipeline for contract review on LangChain: a multi-agent orchestrator (document processing, requisite extraction, counterparty and property checks, risk analysis, legal opinion) with contract sections analyzed in parallel. Over 500 production reviews in May--August 2026; a legal opinion in 8--19 minutes instead of about 97 minutes of manual lawyer work; 8 FTE saved.
+    \item Built and deployed a multi-agent LangChain contract-review pipeline with parallel document analysis: 500+ production reviews in May--August 2026; legal opinions in 8--19 minutes versus approximately 97 minutes of manual work; 8 FTE impact.
     \item Selected and configured LLMs for the pipeline: commercial (OpenAI GPT-4o-mini) and open-source models served via Ollama in a private corporate environment (Llama 3.2, Qwen 2.5, Qwen3-VL for scanned documents).
     \item Set up a RAG-oriented data source over Russian legislation: 40 federal laws, 366 articles (including the Civil Code), BM25 index, relevant articles injected into agent prompts.
-    \item Implemented OCR and LLM extraction of key entities from business documents (contracts, property registry extracts, powers of attorney) with validation of extracted attributes for consistency across documents.
-    \item Built and deployed to dev and prod an OCR and LLM service that reads foreign invoices for the X5 Import business unit: document conversion, multi-pass OCR, LLM-based field extraction; in pilot since August 2026.
+    \item Extracted key entities from contracts, property registry extracts, and powers of attorney using OCR and LLMs; validated consistency across documents.
+    \item Built and deployed to dev and prod an OCR and LLM service that reads foreign invoices for X5 Tech: document conversion, multi-pass OCR, LLM-based field extraction; in pilot since August 2026.
     \item Developed the FastAPI backend for utility-bill processing: OCR results consumed from Apache Kafka, stored and served to the frontend; 10 FTE saved.
     \item Own delivery end to end: technical design, FastAPI services, Docker images, Helm charts, GitLab CI/CD deployment to Kubernetes (dev and prod), post-deployment latency monitoring in Grafana.
 \end{cvitems}
 
 \cvsection{Projects}
-\cventry{AxiomAI (LLM-powered Telegram bot)}{October 2025 --- April 2026}{\href{https://github.com/noobmaster-ru/axiomai}{github.com/noobmaster-ru/axiomai}}
+\cventry{\href{https://github.com/noobmaster-ru/korzina-market}{Korzina} --- Marketplace and AI Product Search}{September 2026 --- Present}{TypeScript, Node.js, PostgreSQL, React}
 \begin{cvitems}
-    \item Built and deployed an aiogram bot on the OpenAI API with PostgreSQL, Redis and Docker; reduced manager workload by 80\% in business communications.
+    \item Building a Telegram Mini App and bot with a catalog of 100,000+ products; automated supplier-data ingestion, normalization, and deduplication.
+    \item Implemented PostgreSQL full-text and trigram search; developing a hybrid retrieval prototype combining multimodal Gemini embeddings, pgvector, reciprocal rank fusion (RRF), and Qwen reranking.
+    \item Implemented LLM/VLM attribute extraction and product-compatibility checks in the prototype, with versioned embedding caches, concurrent-request deduplication, and incremental refresh.
+    \item Built offline relevance evaluation with frozen datasets, qrels, Recall@20, and Precision@5; compared text and multimodal retrieval under model-cost and latency constraints.
+    \item Built the Fastify API and background jobs; deployed the service using PostgreSQL, Valkey, S3, Docker, and GitLab CI/CD.
 \end{cvitems}
-\vspace{3pt}
-\cventry{WB Parser}{July 2025 --- September 2025}{\href{https://github.com/noobmaster-ru/tg-mini-app-backend}{github.com/noobmaster-ru/tg-mini-app-backend}}
-\begin{cvitems}
-    \item Wildberries search-results parser with a Mini App frontend, backend and database; 220 active users.
-\end{cvitems}
+\textbf{Other projects:} \href{https://github.com/noobmaster-ru/axiomai}{AxiomAI}: LLM-powered Telegram bot, 80\% reduction in manager workload; \href{https://github.com/noobmaster-ru/tg-mini-app-backend}{WB Parser}: Wildberries parser and Mini App, 220 users.\par
 
 \cvsection{Education}
-\cventry{Lomonosov Moscow State University, Master's degree}{September 2026 --- Present}{Faculty of Computational Mathematics and Cybernetics (CMC), Dept. of Mathematical Methods of Forecasting, Machine Learning}
-\vspace{2pt}
-\cventry{Lomonosov Moscow State University, Bachelor's degree}{August 2022 --- August 2026}{Faculty of Computational Mathematics and Cybernetics (CMC)}
-\begin{cvitems}
-    \item Summer School on A/B Testing, X5 Tech --- Summer 2026 (\href{https://drive.google.com/file/d/1mUnPwkYkO6VxMJelwePo0Ie6PKA6IBot/view?usp=sharing}{certificate no. 9074503}).
-    \item Deep Learning School (DLS), Computer Vision and NLP tracks --- MIPT School of Deep Learning.
-\end{cvitems}
+\textbf{Lomonosov Moscow State University, Faculty of Computational Mathematics and Cybernetics}\par
+Master's degree in Machine Learning, Dept. of Mathematical Methods of Forecasting | September 2026 --- Present\par
+Bachelor's degree | August 2022 --- August 2026\par
+Additional training: X5 Tech Summer School on A/B Testing, 2026 (\href{https://drive.google.com/file/d/1mUnPwkYkO6VxMJelwePo0Ie6PKA6IBot/view?usp=sharing}{certificate}); Deep Learning School, MIPT (Computer Vision and NLP).
 
 \end{document}

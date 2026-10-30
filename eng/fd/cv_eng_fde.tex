@@ -35,14 +35,10 @@
 Forward Deployed Engineer (AI / LLM, Python)\par\vspace{3pt}
 Moscow, Russia (GMT+3), open to remote work and relocation\par
 Phone: +7 (910) 968 1153 | Email: \href{mailto:kirillkozlov.yar@gmail.com}{kirillkozlov.yar@gmail.com} | Telegram: \href{https://t.me/noobmaster_rus}{@noobmaster\_rus}\par
-GitHub: \href{https://github.com/noobmaster-ru}{github.com/noobmaster-ru} | LinkedIn: \href{https://www.linkedin.com/in/kirill1kozlov/}{linkedin.com/in/kirill1kozlov}
+GitHub: \href{https://github.com/noobmaster-ru}{github.com/noobmaster-ru}
 
 \cvsection{Professional Summary}
-Engineer who turns business processes into deployed AI systems. Since September 2026 at X5 Import (Logistics Solutions
-Department), developing the system that handles 90\% of X5 Retail Group's foreign supplies. Before that, at the X5 Tech
-AI Agents Department, took three business problems from framing to production: an LLM contract-review agent (over 500 production reviews, a legal opinion in 8--19 minutes instead of about 97, 8 FTE saved), an OCR
-pipeline for utility bills (10 FTE saved) and an OCR and LLM invoice service (first commit to a production pilot in under
-three months). Own the full lifecycle: FastAPI, LangChain, open and commercial LLMs in a closed corporate perimeter, Kubernetes, GitLab CI/CD, post-deployment monitoring. Master's student in Machine Learning at CMC MSU.
+Software engineer and Machine Learning master's student at CMC MSU with production experience at X5 Tech. Built Python services using FastAPI, PostgreSQL, and Kubernetes; developing AI product search and catalog-processing pipelines for Korzina.
 
 \cvsection{Technical Skills}
 \textbf{Delivery:} end-to-end ownership from problem framing to production, rapid prototyping, deployment in
@@ -54,37 +50,32 @@ Generation), BM25, LangChain, OpenAI API, Ollama (Llama 3.2, Qwen 2.5, Qwen3-VL)
 \textbf{Languages:} Russian --- Native, English --- B2
 
 \cvsection{Work Experience}
-\cventry{Python Developer (Junior)}{September 2026 --- Present}{X5 Tech (X5 Group, Russia's largest grocery retailer), Logistics Solutions Department, X5 Import, Moscow}
+\cventry{Python Developer (Junior)}{October 2026 --- Present}{X5 Tech (X5 Group, Russia's largest grocery retailer), Logistics Solutions Department, Moscow}
 \begin{cvitems}
     \item Developing the system that handles 90\% of all foreign supplies X5 Retail Group purchases for its retail chains.
 \end{cvitems}
 \vspace{2pt}
 
-\cventry{Machine Learning Developer (Intern)}{April 2026 --- August 2026}{X5 Tech, AI Agents Department, Moscow}
+\cventry{Machine Learning Developer (Intern)}{April 2026 --- October 2026}{X5 Tech, AI Agents Department, Moscow}
 \begin{cvitems}
     \item Delivered a production LLM agent for the legal department's contract review: a multi-agent pipeline on LangChain (document processing, requisite extraction, counterparty and property checks, risk analysis, legal opinion) with contract sections analyzed in parallel. Over 500 reviews in production in May--August 2026; a legal opinion in 8--19 minutes instead of about 97 minutes of manual lawyer work; 8 FTE saved.
     \item Deployed the solution inside the corporate perimeter: open-source models (Llama 3.2, Qwen 2.5, Qwen3-VL for scanned documents) served via Ollama alongside OpenAI GPT-4o-mini; Kubernetes dev and prod via Helm charts and GitLab CI/CD; latency monitoring in Grafana.
     \item Built a RAG data source over Russian legislation (40 federal laws, 366 articles including the Civil Code, BM25 index) with relevant articles injected into agent prompts.
     \item Implemented OCR and LLM extraction of key entities from contracts, property registry extracts and powers of attorney, with validation of extracted attributes for consistency across documents.
-    \item Shipped an OCR and LLM service that reads foreign invoices for the X5 Import business unit: from first commit in June 2026 to dev and prod deployment and a pilot with the internal consumer platform in August 2026.
+    \item Shipped an OCR and LLM service that reads foreign invoices for X5 Tech: from first commit in June 2026 to dev and prod deployment and a pilot with the internal consumer platform in August 2026.
     \item Developed the FastAPI backend for utility-bill processing across X5 Group premises: OCR results consumed from Apache Kafka, stored and served to the frontend; 10 FTE saved.
 \end{cvitems}
 
-\cvsection{Projects (shipped to real users)}
-\cventry{AxiomAI (LLM-powered Telegram bot)}{October 2025 --- April 2026}{\href{https://github.com/noobmaster-ru/axiomai}{github.com/noobmaster-ru/axiomai}}
+\cvsection{Projects}
+\cventry{\href{https://github.com/noobmaster-ru/korzina-market}{Korzina} --- Marketplace and AI Product Search}{September 2026 --- Present}{TypeScript, Node.js, PostgreSQL, React}
 \begin{cvitems}
-    \item Built and deployed an aiogram bot on the OpenAI API with PostgreSQL, Redis and Docker for a business's customer communications; reduced manager workload by 80\%.
+    \item Building a Telegram Mini App and bot with a catalog of 100,000+ products; automated supplier-data ingestion, normalization, and deduplication.
+    \item Implemented PostgreSQL full-text and trigram search; developing a hybrid retrieval prototype combining multimodal Gemini embeddings, pgvector, reciprocal rank fusion (RRF), and Qwen reranking.
+    \item Implemented LLM/VLM attribute extraction and product-compatibility checks in the prototype, with versioned embedding caches, concurrent-request deduplication, and incremental refresh.
+    \item Built offline relevance evaluation with frozen datasets, qrels, Recall@20, and Precision@5; compared text and multimodal retrieval under model-cost and latency constraints.
+    \item Built the Fastify API and background jobs; deployed the service using PostgreSQL, Valkey, S3, Docker, and GitLab CI/CD.
 \end{cvitems}
-\vspace{3pt}
-\cventry{WB Parser}{July 2025 --- September 2025}{\href{https://github.com/noobmaster-ru/tg-mini-app-backend}{github.com/noobmaster-ru/tg-mini-app-backend}}
-\begin{cvitems}
-    \item Wildberries search-results parser delivered as a Telegram Mini App with backend and database; 220 active users.
-\end{cvitems}
-\vspace{3pt}
-\cventry{Placa}{July 2024 --- December 2024}{\href{https://github.com/noobmaster-ru/wb_tables}{github.com/noobmaster-ru/wb\_tables}}
-\begin{cvitems}
-    \item Self-service Google Sheets analytics for Wildberries sellers (Google Apps Script, Wildberries API, daily automated loads); about 300 sellers.
-\end{cvitems}
+\textbf{Other projects:} \href{https://github.com/noobmaster-ru/axiomai}{AxiomAI}: LLM-powered Telegram bot, 80\% reduction in manager workload; \href{https://github.com/noobmaster-ru/tg-mini-app-backend}{WB Parser}: Wildberries parser and Mini App, 220 users; \href{https://github.com/noobmaster-ru/wb_tables}{Placa}: analytics for 300 sellers.\par
 
 \cvsection{Education}
 \cventry{Lomonosov Moscow State University, Master's degree}{September 2026 --- Present}{Faculty of Computational Mathematics and Cybernetics (CMC), Dept. of Mathematical Methods of Forecasting, Machine Learning}
